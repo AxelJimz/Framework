@@ -1,0 +1,61 @@
+// ? Style Active and Hover
+
+// * Configuration
+
+@include isNavLink--active();
+
+@include isBtn--square-active();
+@include isBtn--rounded-hover();
+@include isBtn-gray-active();
+@include isBtn-red-active();
+@include isBtn-orange-active();
+@include isBtn-yellow-active();
+@include isBtn-green-active();
+@include isBtn-blue-active();
+@include isBtn-violet-active();
+@include isBtn-fuchsia-active();
+
+@include isBtn-gray--outline-active();
+@include isBtn-red--outline-active();
+@include isBtn-orange--outline-active();
+@include isBtn-yellow--outline-active();
+@include isBtn-green--outline-active();
+@include isBtn-blue--outline-active();
+@include isBtn-violet--outline-active();
+@include isBtn-fuchsia--outline-active();
+
+@include isIconNav--active();
+@include isIconHeader--active();
+@include isIconArticle--active();
+@include isIconCard--active();
+@include isIconFooter--active();
+
+@media (hover: hover) {
+  @include isNavLink--hover();
+
+  @include isBtn--square-hover();
+  @include isBtn--rounded-hover();
+  @include isBtn-gray-hover();
+  @include isBtn-red-hover();
+  @include isBtn-orange-hover();
+  @include isBtn-yellow-hover();
+  @include isBtn-green-hover();
+  @include isBtn-blue-hover();
+  @include isBtn-violet-hover();
+  @include isBtn-fuchsia-hover();
+
+  @include isBtn-gray--outline-hover();
+  @include isBtn-red--outline-hover();
+  @include isBtn-orange--outline-hover();
+  @include isBtn-yellow--outline-hover();
+  @include isBtn-green--outline-hover();
+  @include isBtn-blue--outline-hover();
+  @include isBtn-violet--outline-hover();
+  @include isBtn-fuchsia--outline-hover();
+
+  @include isIconNav--hover();
+  @include isIconHeader--hover();
+  @include isIconArticle--hover();
+  @include isIconCard--hover();
+  @include isIconFooter--hover();
+}

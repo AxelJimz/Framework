@@ -1,0 +1,58 @@
+// ? Style Cards
+
+// * Configuration
+
+$cards: (
+  "position": relative,
+  "width": 100%,
+  "display": flex,
+  "justify-content": space-around,
+  "flex-wrap": wrap,
+);
+
+$card: (
+  "position": relative,
+  "width": 100%,
+  "max-width": 225px,
+  "padding": 1rem 1.5rem,
+  "margin": 0 0.250rem 1.25rem 0.250rem,
+  "bg-color": none,
+  "rounded": none,
+  "border-color": none,
+  "box-shadow": none,
+);
+
+$card__picture: (
+  "position": relative,
+  "width": 100%,
+  "height": 2rem,
+  "padding": none,
+  "margin": 0 0 1rem 0,
+);
+
+$card__title: (
+  "margin": 0 0 1rem 0,
+  "size": 16px,
+  "weight": 600,
+  "spacing": none,
+  "leading": none,
+  "color": #1b1b1b,
+);
+
+$card__subtitle: (
+  "margin": 0 0 1rem 0,
+  "size": 14px,
+  "weight": 600,
+  "spacing": none,
+  "leading": none,
+  "color": #1b1b1b,
+);
+
+$card__paragraph: (
+  "margin": 0.5rem auto 1.5rem auto,
+  "size": 14px,
+  "weight": none,
+  "spacing": none,
+  "leading": 1.5rem,
+  "color": #aaaaaa,
+);

@@ -1,0 +1,119 @@
+// ? Style Borders
+
+// * Configuration
+
+$size-border : 2px;
+
+$border-gray : (
+    "used" : true,
+    "border" : $size-border solid $gray,
+
+);
+
+$border-red : (
+    "used" : true,
+    "border" : $size-border solid $red,
+
+);
+
+$border-orange : (
+    "used" : true,
+    "border" : $size-border solid $orange,
+
+);
+
+$border-yellow : (
+    "used" : true,
+    "border" : $size-border solid $yellow,
+
+);
+
+$border-green : (
+    "used" : true,
+    "border" : $size-border solid $green,
+
+);
+
+$border-blue : (
+    "used" : true,
+    "border" : $size-border solid $blue,
+
+);
+
+$border-violet : (
+    "used" : true,
+    "border" : $size-border solid $violet,
+
+);
+
+$border-fuchsia : (
+    "used" : true,
+    "border" : $size-border solid $fuchsia,
+
+);
+
+$border-black : (
+    "used" : true,
+    "border" : $size-border solid $black,
+
+);
+
+$border-white : (
+    "used" : true,
+    "border" : $size-border solid $white,
+
+);
+
+$border-light : (
+    "used" : true,
+    "border" : $size-border solid $light,
+
+);
+
+$border-rounded : (
+    "used" : true,
+    "border-radius" : 100%,
+
+);
+
+$border-top : (
+    "used" : true,
+    "border-top": $size-border,
+
+);
+
+$border-right : (
+    "used" : true,
+    "border-right": $size-border,
+
+);
+
+$border-bottom : (
+    "used" : true,
+    "border-bottom": $size-border,
+
+);
+
+$border-left : (
+    "used" : true,
+    "border-left": $size-border,
+
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

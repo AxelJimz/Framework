@@ -1,0 +1,46 @@
+// * Style Form Typography
+
+// Base
+
+$form__span: (
+  "used" : true,
+  "margin": 0 0 1rem 0,
+  "size": 14px,
+  "weight": none,
+  "spacing": none,
+  "leading": none,
+  "color": #aaaaaa,
+);
+
+$form__title: (
+  "used" : true,
+  "margin": 0 0 1rem 0,
+  "size": 30px,
+  "weight": 600,
+  "spacing": none,
+  "leading": none,
+  "color": #1b1b1b,
+);
+
+$form__subtitle: (
+  "used" : true,
+  "margin": 0 0 1rem 0,
+  "size": 20px,
+  "weight": 600,
+  "spacing": none,
+  "leading": none,
+  "color": #1b1b1b,
+);
+
+$form__paragraph: (
+  "used" : true,
+  "width": 100%,
+  "max-width": 752px,
+  "margin": 0.5rem auto 1.5rem auto,
+  "size": 14px,
+  "weight": none,
+  "spacing": none,
+  "leading": none,
+  "color": #aaaaaa,
+  "md-margin": none,
+);

@@ -1,0 +1,40 @@
+// ? Modifiers Style Card
+
+// * Configuration
+
+$width-card : map-get($map: $card, $key: max-width);
+
+// Cards
+
+$card--small: (
+  "used" : true,
+  "max-width": $width-card / 2,
+  "padding": none,
+  "margin": none,
+  "bg-color": none,
+  "rounded": none,
+  "border-color": none,
+  "box-shadow": none,
+);
+
+$card--medium: (
+  "used" : true,
+  "max-width": $width-card / 1.5,
+  "padding": none,
+  "margin": none,
+  "bg-color": none,
+  "rounded": none,
+  "border-color": none,
+  "box-shadow": none,
+);
+
+$card--large: (
+  "used" : true,
+  "max-width": $width-card * 1.75,
+  "padding": none,
+  "margin": none,
+  "bg-color": none,
+  "rounded": none,
+  "border-color": none,
+  "box-shadow": none,
+);

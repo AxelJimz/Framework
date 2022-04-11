@@ -1,0 +1,26 @@
+// ? Modifiers Style Card Title
+
+// * Configuration
+
+$size-card-title: map-get(
+  $map: $card__title,
+  $key: size,
+);
+
+// Card Title
+
+$card__title--small: (
+  "used": true,
+  "size": $size-card-title / 1.5,
+);
+
+$card__title--medium: (
+  "used": true,
+  "size": $size-card-title * 1.25,
+);
+
+$card__title--large: (
+  "used": true,
+  "size": $size-card-title * 2,
+);
+

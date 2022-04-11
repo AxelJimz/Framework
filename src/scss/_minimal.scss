@@ -1,0 +1,44 @@
+/* Import Typography */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600&display=swap");
+
+/* Font Family Typography */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+}
+
+p, span, a, button {
+    font-family: 'raleway', sans-serif;
+}
+
+// ! Order Style | Do not Modify
+
+@import "normalize/normalize";
+@import "colors/colors";
+@import "content/content";
+@import "grid/grid";
+@import "flexbox/flexbox";
+@import "header/header";
+@import "header/nav";
+@import "typography/header-typography";
+@import "typography/article-typography";
+@import "typography/footer-typography";
+@import "alingContent/alingContent";
+@import "buttons/buttons";
+@import "mixins/mixins";
+@import "form/form-typography";
+@import "form/form-inputs";
+@import "icons/icons";
+@import "colorText/colorText";
+@import "backgrounds/backgrounds";
+@import "spacingBox/spacingBox";
+@import "borders/borders";
+@import "hovers/hovers";
+@import "breakpoints/breakpoints";
+
+
+
+
+

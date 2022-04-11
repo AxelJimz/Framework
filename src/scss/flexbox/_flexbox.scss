@@ -1,0 +1,83 @@
+// ? Style Flexbox
+
+// * Configuration
+
+$content-x-center: (
+  // BREAKPOINT SMALL
+  "used": true,
+  "display": flex,
+  "justify-content": center,
+  "aling-items": center,
+  // BREAKPOINT MEDIUM
+  "md-display": flex,
+  "md-justify-content": center,
+  "md-aling-items": center,
+  // BREAKPOINT LARGE
+  "lg-display": flex,
+  "lg-justify-content": center,
+  "lg-aling-items": center
+);
+
+$content-x-left-center: (
+  // BREAKPOINT SMALL
+  "used": true,
+  "display": flex,
+  "justify-content": flex-start,
+  "aling-items": center,
+  // BREAKPOINT MEDIUM
+  "md-display": none,
+  "md-justify-content": flex-start,
+  "md-aling-items": center,
+  // BREAKPOINT LARGE
+  "lg-display": none,
+  "lg-justify-content": flex-start,
+  "lg-aling-items": center
+);
+
+$content-x-center-right: (
+  // BREAKPOINT SMALL
+  "used": true,
+  "display": flex,
+  "justify-content": center,
+  "aling-items": flex-end,
+  // BREAKPOINT MEDIUM
+  "md-display": flex,
+  "md-justify-content": center,
+  "md-aling-items": flex-end,
+  // BREAKPOINT LARGE
+  "lg-display": flex,
+  "lg-justify-content": center,
+  "lg-aling-items": flex-end
+);
+
+$content-x-center-around: (
+  // BREAKPOINT SMALL
+  "used": true,
+  "display": flex,
+  "justify-content": space-around,
+  "aling-items": center,
+  // BREAKPOINT MEDIUM
+  "md-display": flex,
+  "md-justify-content": space-around,
+  "md-aling-items": center,
+  // BREAKPOINT LARGE
+  "lg-display": flex,
+  "lg-justify-content": space-around,
+  "lg-aling-items": center
+);
+
+$content-x-center-between: (
+  // BREAKPOINT SMALL
+  "used": true,
+  "display": flex,
+  "justify-content": space-between,
+  "aling-items": center,
+  // BREAKPOINT MEDIUM
+  "md-display": flex,
+  "md-justify-content": space-between,
+  "md-aling-items": center,
+  // BREAKPOINT LARGE
+  "lg-display": flex,
+  "lg-justify-content": space-between,
+  "lg-aling-items": center
+);

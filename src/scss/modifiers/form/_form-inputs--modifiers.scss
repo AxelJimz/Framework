@@ -1,0 +1,23 @@
+// ? Modifiers Style Form Input
+
+// * Configuration
+
+$padding-input--small : map-get($map: $btn--small, $key: padding);
+$padding-input--medium : map-get($map: $btn--medium, $key: padding);
+$padding-input--large : map-get($map: $btn--large, $key: padding);
+
+$form__input--small : (
+    "used" : true,
+    "padding" : $padding-input--small,
+);
+
+$form__input--medium : (
+    "used" : true,
+    "padding" : $padding-input--medium,
+);
+
+$form__input--large : (
+    "used" : true,
+    "padding" : $padding-input--large,
+);
+

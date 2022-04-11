@@ -1,0 +1,33 @@
+// ? Style Form Inputs
+
+// * Configuration
+
+$padding-input : map-get($map: $btn--square, $key: padding);
+
+$form__input : (
+    "used" : true,
+    "padding" : $padding-input,
+    "color" : $gray,
+);
+
+$form__btn : (
+    "used" : true,
+    "padding" : $padding-input,
+    "color" : $white,
+    "bg" : $gray,
+    "border-color" : $gray,
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+

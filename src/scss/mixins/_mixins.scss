@@ -1,0 +1,2812 @@
+// ! Mixins | Do not Modify
+
+// * Configuration
+
+// ? Content Modifiers
+@import "../modifiers/content/content--modifiers";
+// ? Nav Modifiers
+@import "../header/header";
+@import "../modifiers/nav/nav--modifiers";
+// ? Buttons Modifiers
+@import "../modifiers/buttons/button--modifiers";
+// ? Card
+@import "../cards/cards";
+// ? Card Modifiers
+@import "../modifiers/cards/card--modifiers";
+@import "../modifiers/cards/card-picture--modifiers";
+@import "../modifiers/cards/card-title--modifiers";
+// ? Form typography
+@import "../form/form-typography";
+// ? Form Modifiers
+@import "../form/form-inputs";
+@import "../modifiers/form/form-inputs--modifiers";
+// ? Icons
+@import "../icons/icons";
+// ? Color Text
+@import "../colorText/colorText";
+// ? Backgrounds
+@import "../backgrounds/backgrounds";
+// ? Spacing Box
+@import "../spacingBox/spacingBox";
+
+@import "../borders/borders";
+
+// * Containers
+
+@mixin isContent-header-article-footer {
+  .header,
+  .article,
+  .footer {
+    position: map-get($map: $header-article-footer, $key: position);
+    width: map-get($map: $header-article-footer, $key: width);
+    padding: map-get($map: $header-article-footer, $key: padding);
+    z-index: map-get($map: $header-article-footer, $key: z-index);
+  }
+}
+@mixin isHeader {
+  .header {
+    height: map-get($map: $header, $key: height);
+    max-height: map-get($map: $header, $key: max-height);
+    padding: 0;
+  }
+}
+@mixin isHeader--double {
+  .header--double {
+    height: map-get($map: $header--double, $key: height);
+    min-height: map-get($map: $header--double, $key: min-height);
+  }
+}
+@mixin isHeaderContent {
+  .header__content {
+    position: map-get($map: $header__content, $key: position);
+    width: map-get($map: $header__content, $key: width);
+    max-width: map-get($map: $header__content, $key: max-width);
+    height: map-get($map: $header__content, $key: height);
+    max-height: map-get($map: $header__content, $key: max-height);
+    padding: map-get($map: $header__content, $key: padding);
+    margin-inline: map-get($map: $header__content, $key: margin-inline);
+  }
+}
+@mixin isArticleContent {
+  .article__content {
+    position: map-get($map: $article__content, $key: position);
+    width: map-get($map: $article__content, $key: width);
+    max-width: map-get($map: $article__content, $key: max-width);
+    padding: map-get($map: $article__content, $key: padding);
+    margin-inline: map-get($map: $article__content, $key: margin-inline);
+  }
+}
+@mixin isArticleContent--small {
+  @if (map-get($map: $article__content--small, $key: used) == true) {
+    .article__content--small {
+      padding: map-get($map: $article__content--small, $key: padding);
+    }
+  }
+}
+@mixin isArticleContent--medium {
+  @if (map-get($map: $article__content--medium, $key: used) == true) {
+    .article__content--medium {
+      padding: map-get($map: $article__content--medium, $key: padding);
+    }
+  }
+}
+@mixin isArticleContent--large {
+  @if (map-get($map: $article__content--large, $key: used) == true) {
+    .article__content--large {
+      padding: map-get($map: $article__content--large, $key: padding);
+    }
+  }
+}
+@mixin isFooterContent {
+  .footer__content {
+    position: map-get($map: $footer__content, $key: position);
+    width: map-get($map: $footer__content, $key: width);
+    max-width: map-get($map: $footer__content, $key: max-width);
+    padding: map-get($map: $footer__content, $key: padding);
+    margin-inline: map-get($map: $footer__content, $key: margin-inline);
+  }
+}
+
+/* Style Content */
+@include isContent-header-article-footer();
+@include isHeader();
+@include isHeader--double();
+@include isHeaderContent();
+@include isArticleContent();
+@include isArticleContent--small();
+@include isArticleContent--medium();
+@include isArticleContent--large();
+@include isFooterContent();
+
+// * Row Mixins
+
+@mixin isRow {
+  .row {
+    width: map-get($map: $row, $key: width);
+    display: map-get($map: $row, $key: display);
+    grid-template-columns: map-get($map: $row, $key: columns);
+  }
+}
+@mixin isRowColumn {
+  .row {
+    .column {
+      padding: map-get($map: $column, $key: padding);
+    }
+  }
+}
+@mixin isColumns {
+  .columns-two,
+  .columns-three,
+  .columns-four {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* Style Row */
+
+@include isRow();
+@include isRowColumn();
+@include isColumns();
+
+// * Flexbox Mixins
+
+// Content X Center
+
+@mixin isContent-x-center {
+  @if (map-get($map: $content-x-center, $key: used) == true) {
+    .content-x-center {
+      display: map-get($map: $content-x-center, $key: display);
+      justify-content: map-get($map: $content-x-center, $key: justify-content);
+      align-items: map-get($map: $content-x-center, $key: aling-items);
+    }
+  }
+}
+@mixin isContent-x-center-md {
+  @if (map-get($map: $content-x-center, $key: md-display) != none) {
+    .content-x-center {
+      @if (map-get($map: $content-x-center, $key: md-display) != none) {
+        display: map-get($map: $content-x-center, $key: md-display);
+      }
+      @if (map-get($map: $content-x-center, $key: md-display) != none) {
+        justify-content: map-get(
+          $map: $content-x-center,
+          $key: md-justify-content
+        );
+      }
+      @if (map-get($map: $content-x-center, $key: md-aling-items) != none) {
+        align-items: map-get($map: $content-x-center, $key: md-aling-items);
+      }
+    }
+  }
+}
+@mixin isContent-x-center-lg {
+  @if (map-get($map: $content-x-center, $key: lg-display) != none) {
+    .content-x-center {
+      @if (map-get($map: $content-x-center, $key: lg-display) != none) {
+        display: map-get($map: $content-x-center, $key: lg-display);
+      }
+      @if (map-get($map: $content-x-center, $key: lg-display) != none) {
+        justify-content: map-get(
+          $map: $content-x-center,
+          $key: lg-justify-content
+        );
+      }
+      @if (map-get($map: $content-x-center, $key: lg-aling-items) != none) {
+        align-items: map-get($map: $content-x-center, $key: lg-aling-items);
+      }
+    }
+  }
+}
+
+// Content X Left Center
+
+@mixin isContent-x-left-center {
+  @if (map-get($map: $content-x-left-center, $key: used) == true) {
+    .content-x-left-center {
+      display: map-get($map: $content-x-left-center, $key: display);
+      justify-content: map-get(
+        $map: $content-x-left-center,
+        $key: justify-content
+      );
+      align-items: map-get($map: $content-x-left-center, $key: aling-center);
+    }
+  }
+}
+@mixin isContent-x-left-center-md {
+  @if (map-get($map: $content-x-left-center, $key: md-display) != none) {
+    .content-x-left-center {
+      @if (map-get($map: $content-x-left-center, $key: md-display) != none) {
+        display: map-get($map: $content-x-left-center, $key: md-display);
+      }
+      @if (map-get($map: $content-x-left-center, $key: md-display) != none) {
+        justify-content: map-get(
+          $map: $content-x-left-center,
+          $key: md-justify-content
+        );
+      }
+      @if (
+        map-get($map: $content-x-left-center, $key: md-aling-items) != none
+      ) {
+        align-items: map-get(
+          $map: $content-x-left-center,
+          $key: md-aling-center
+        );
+      }
+    }
+  }
+}
+@mixin isContent-x-left-center-lg {
+  @if (map-get($map: $content-x-left-center, $key: lg-display) != none) {
+    .content-x-left-center {
+      @if (map-get($map: $content-x-left-center, $key: lg-display) != none) {
+        display: map-get($map: $content-x-left-center, $key: lg-display);
+      }
+      @if (map-get($map: $content-x-left-center, $key: lg-display) != none) {
+        justify-content: map-get(
+          $map: $content-x-left-center,
+          $key: lg-justify-content
+        );
+      }
+      @if (
+        map-get($map: $content-x-left-center, $key: lg-aling-items) != none
+      ) {
+        align-items: map-get(
+          $map: $content-x-left-center,
+          $key: lg-aling-center
+        );
+      }
+    }
+  }
+}
+
+// Content X Center Right
+
+@mixin isContent-x-center-right {
+  @if (map-get($map: $content-x-center-right, $key: used) == true) {
+    .content-x-center-right {
+      display: map-get($map: $content-x-center-right, $key: display);
+      justify-content: map-get(
+        $map: $content-x-center-right,
+        $key: justify-content
+      );
+      align-items: map-get($map: $content-x-center-right, $key: aling-center);
+    }
+  }
+}
+@mixin isContent-x-center-right-md {
+  @if (map-get($map: $content-x-center-right, $key: md-display) != none) {
+    .content-x-center-right {
+      @if (map-get($map: $content-x-center-right, $key: md-display) != none) {
+        display: map-get($map: $content-x-center-right, $key: md-display);
+      }
+      @if (map-get($map: $content-x-center-right, $key: md-display) != none) {
+        justify-content: map-get(
+          $map: $content-x-center-right,
+          $key: md-justify-content
+        );
+      }
+      @if (
+        map-get($map: $content-x-center-right, $key: md-aling-items) != none
+      ) {
+        align-items: map-get(
+          $map: $content-x-center-right,
+          $key: md-aling-center
+        );
+      }
+    }
+  }
+}
+@mixin isContent-x-center-right-lg {
+  @if (map-get($map: $content-x-center-right, $key: lg-display) != none) {
+    .content-x-center-right {
+      @if (map-get($map: $content-x-center-right, $key: lg-display) != none) {
+        display: map-get($map: $content-x-center-right, $key: lg-display);
+      }
+      @if (map-get($map: $content-x-center-right, $key: lg-display) != none) {
+        justify-content: map-get(
+          $map: $content-x-center-right,
+          $key: lg-justify-content
+        );
+      }
+      @if (
+        map-get($map: $content-x-center-right, $key: lg-aling-items) != none
+      ) {
+        align-items: map-get(
+          $map: $content-x-center-right,
+          $key: lg-aling-center
+        );
+      }
+    }
+  }
+}
+
+// Content X Center Around
+
+@mixin isContent-x-center-around {
+  @if (map-get($map: $content-x-center-around, $key: used) == true) {
+    .content-x-center-around {
+      display: map-get($map: $content-x-center-around, $key: display);
+      justify-content: map-get(
+        $map: $content-x-center-around,
+        $key: justify-content
+      );
+      align-items: map-get($map: $content-x-center-around, $key: aling-center);
+    }
+  }
+}
+@mixin isContent-x-center-around-md {
+  @if (map-get($map: $content-x-center-around, $key: md-display) != none) {
+    .content-x-center-around {
+      @if (map-get($map: $content-x-center-around, $key: md-display) != none) {
+        display: map-get($map: $content-x-center-around, $key: md-display);
+      }
+      @if (map-get($map: $content-x-center-around, $key: md-display) != none) {
+        justify-content: map-get(
+          $map: $content-x-center-around,
+          $key: md-justify-content
+        );
+      }
+      @if (
+        map-get($map: $content-x-center-around, $key: md-aling-items) != none
+      ) {
+        align-items: map-get(
+          $map: $content-x-center-around,
+          $key: md-aling-center
+        );
+      }
+    }
+  }
+}
+@mixin isContent-x-center-around-lg {
+  @if (map-get($map: $content-x-center-around, $key: lg-display) != none) {
+    .content-x-center-around {
+      @if (map-get($map: $content-x-center-around, $key: lg-display) != none) {
+        display: map-get($map: $content-x-center-around, $key: lg-display);
+      }
+      @if (map-get($map: $content-x-center-around, $key: lg-display) != none) {
+        justify-content: map-get(
+          $map: $content-x-center-around,
+          $key: lg-justify-content
+        );
+      }
+      @if (
+        map-get($map: $content-x-center-around, $key: lg-aling-items) != none
+      ) {
+        align-items: map-get(
+          $map: $content-x-center-around,
+          $key: lg-aling-center
+        );
+      }
+    }
+  }
+}
+
+// Content X Center Between
+
+@mixin isContent-x-center-between {
+  @if (map-get($map: $content-x-center-between, $key: used) == true) {
+    .content-x-center-between {
+      display: map-get($map: $content-x-center-between, $key: display);
+      justify-content: map-get(
+        $map: $content-x-center-between,
+        $key: justify-content
+      );
+      align-items: map-get($map: $content-x-center-between, $key: aling-center);
+    }
+  }
+}
+@mixin isContent-x-center-between-md {
+  @if (map-get($map: $content-x-center-between, $key: md-display) != none) {
+    .content-x-center-between {
+      @if (map-get($map: $content-x-center-between, $key: md-display) != none) {
+        display: map-get($map: $content-x-center-between, $key: md-display);
+      }
+      @if (map-get($map: $content-x-center-between, $key: md-display) != none) {
+        justify-content: map-get(
+          $map: $content-x-center-between,
+          $key: md-justify-content
+        );
+      }
+      @if (
+        map-get($map: $content-x-center-between, $key: md-aling-items) != none
+      ) {
+        align-items: map-get(
+          $map: $content-x-center-between,
+          $key: md-aling-center
+        );
+      }
+    }
+  }
+}
+@mixin isContent-x-center-between-lg {
+  @if (map-get($map: $content-x-center-between, $key: lg-display) != none) {
+    .content-x-center-between {
+      @if (map-get($map: $content-x-center-between, $key: lg-display) != none) {
+        display: map-get($map: $content-x-center-between, $key: lg-display);
+      }
+      @if (map-get($map: $content-x-center-between, $key: lg-display) != none) {
+        justify-content: map-get(
+          $map: $content-x-center-between,
+          $key: lg-justify-content
+        );
+      }
+      @if (
+        map-get($map: $content-x-center-between, $key: lg-aling-items) != none
+      ) {
+        align-items: map-get(
+          $map: $content-x-center-between,
+          $key: lg-aling-center
+        );
+      }
+    }
+  }
+}
+
+/* Style Flexbox */
+
+@include isContent-x-center();
+@include isContent-x-left-center();
+@include isContent-x-center-right();
+@include isContent-x-center-around();
+@include isContent-x-center-between();
+
+// * Nav Mixins
+
+@mixin isHeaderNav {
+  .header__nav {
+    position: map-get($map: $header__nav, $key: position);
+    width: map-get($map: $header__nav, $key: width);
+    padding: map-get($map: $header__nav, $key: padding);
+    z-index: map-get($map: $header__nav, $key: z-index);
+    background-color: map-get($map: $header__nav, $key: bg);
+    box-shadow: map-get($map: $header__nav, $key: box-shadow);
+  }
+}
+@mixin isHeaderNav--fixed {
+  @if (map-get($map: $nav--fixed, $key: used) == true) {
+    .header__nav--fixed {
+      position: map-get($map: $nav--fixed, $key: position);
+      top: map-get($map: $nav--fixed, $key: top);
+      left: map-get($map: $nav--fixed, $key: left);
+    }
+  }
+}
+@mixin isHeaderNav--sticky {
+  @if (map-get($map: $nav--sticky, $key: used) == true) {
+    .header__nav--sticky {
+      position: map-get($map: $nav--sticky, $key: position);
+      top: map-get($map: $nav--sticky, $key: top);
+      left: map-get($map: $nav--sticky, $key: left);
+    }
+  }
+}
+@mixin isNavSidebar {
+  .nav__sidebar {
+    position: map-get($map: $nav__sidebar, $key: position);
+    width: map-get($map: $nav__sidebar, $key: width);
+    max-width: map-get($map: $nav__sidebar, $key: max-width);
+    height: map-get($map: $nav__sidebar, $key: height);
+    padding: map-get($map: $nav__sidebar, $key: padding);
+    margin-inline: map-get($map: $nav__sidebar, $key: margin-inline);
+  }
+}
+@mixin isNavMobile {
+  .nav__mobile {
+    position: map-get($map: $nav__mobile, $key: position);
+    display: map-get($map: $nav__mobile, $key: display);
+    justify-content: map-get($map: $nav__mobile, $key: justify-content);
+    align-items: map-get($map: $nav__mobile, $key: align-items);
+  }
+}
+@mixin isNavLogo {
+  .nav__logo {
+    margin: map-get($map: $nav__logo, $key: margin);
+    @if (map-get($map: $nav__logo, $key: width) != none) {
+      width: map-get($map: $nav__logo, $key: width);
+    }
+    @if (map-get($map: $nav__logo, $key: height) != none) {
+      height: map-get($map: $nav__logo, $key: height);
+    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: map-get($map: $nav__logo, $key: cursor);
+  }
+}
+@mixin isNavMenu {
+  .nav__menu {
+    @if (map-get($map: $nav__menu, $key: margin) != none) {
+      margin: map-get($map: $nav__menu, $key: margin);
+    }
+    @if (map-get($map: $nav__menu, $key: width) != none) {
+      width: map-get($map: $nav__menu, $key: width);
+    }
+    @if (map-get($map: $nav__menu, $key: height) != none) {
+      height: map-get($map: $nav__menu, $key: height);
+    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: map-get($map: $nav__menu, $key: cursor);
+  }
+}
+@mixin isNavDisable {
+  $transition: map-get(
+    $map: $nav__disable,
+    $key: transition,
+  );
+  .nav__disable {
+    position: map-get($map: $nav__disable, $key: position);
+    width: map-get($map: $nav__disable, $key: width);
+    padding: map-get($map: $nav__disable, $key: padding);
+    margin-top: map-get($map: $nav__disable, $key: margin-top);
+    left: map-get($map: $nav__disable, $key: left);
+    background-color: map-get($map: $nav__disable, $key: bg);
+    transition: $transition;
+    -webkit-transition: $transition;
+    -moz-transition: $transition;
+    -ms-transition: $transition;
+    -o-transition: $transition;
+  }
+}
+@mixin isNavDisable--left {
+  .nav__disable--left {
+    position: map-get($map: $nav__disable--left, $key: position);
+    left: map-get($map: $nav__disable--left, $key: left);
+  }
+}
+@mixin isNavDesktop {
+  .nav__desktop {
+    display: map-get($map: $nav__desktop, $key: display);
+  }
+}
+@mixin isNavLink {
+  .nav__link {
+    padding: map-get($map: $nav__link, $key: padding);
+    margin: map-get($map: $nav__link, $key: margin);
+    font-size: map-get($map: $nav__link, $key: size);
+    line-height: map-get($map: $nav__link, $key: leading);
+    color: map-get($map: $nav__link, $key: color);
+  }
+}
+@mixin isNavLink--margin {
+  .nav__link--margin {
+    margin: map-get($map: $nav__link--margin, $key: margin);
+  }
+}
+@mixin isNavLink--active {
+  .nav__link:active {
+    color: map-get($map: $nav__link, $key: color-hover);
+  }
+}
+@mixin isNavLink--hover {
+  .nav__link:hover {
+    color: map-get($map: $nav__link, $key: color-hover);
+  }
+}
+
+/* Style Nav */
+
+@include isHeaderNav();
+@include isHeaderNav--fixed();
+@include isHeaderNav--sticky();
+@include isNavSidebar();
+@include isNavMobile();
+@include isNavLogo();
+@include isNavMenu();
+@include isNavDisable();
+@include isNavDisable--left();
+@include isNavDesktop();
+@include isNavLink();
+@include isNavLink--margin();
+
+//* Typography Mixins
+
+// Header Typography
+
+@mixin isHeaderSpan {
+  @if (map-get($map: $header__span, $key: used) == true) {
+    .header__span {
+      margin: map-get($map: $header__span, $key: margin);
+      font-size: map-get($map: $header__span, $key: size);
+      @if (map-get($map: $header__span, $key: weight) != none) {
+        font-weight: map-get($map: $header__span, $key: weight);
+      }
+      @if (map-get($map: $header__span, $key: spacing) != none) {
+        letter-spacing: map-get($map: $header__span, $key: spacing);
+      }
+      @if (map-get($map: $header__span, $key: leading) != none) {
+        line-height: map-get($map: $header__span, $key: leading);
+      }
+      color: map-get($map: $header__span, $key: color);
+    }
+  }
+}
+@mixin isHeaderTitle {
+  @if (map-get($map: $header__title, $key: used) == true) {
+    .header__title {
+      margin: map-get($map: $header__title, $key: margin);
+      font-size: map-get($map: $header__title, $key: size);
+      @if (map-get($map: $header__title, $key: weight) != none) {
+        font-weight: map-get($map: $header__title, $key: weight);
+      }
+      @if (map-get($map: $header__title, $key: spacing) != none) {
+        letter-spacing: map-get($map: $header__title, $key: spacing);
+      }
+      @if (map-get($map: $header__title, $key: leading) != none) {
+        line-height: map-get($map: $header__title, $key: leading);
+      }
+      color: map-get($map: $header__title, $key: color);
+    }
+  }
+}
+@mixin isHeaderSubtitle {
+  @if (map-get($map: $header__subtitle, $key: used) == true) {
+    .header__subtitle {
+      margin: map-get($map: $header__subtitle, $key: margin);
+      font-size: map-get($map: $header__subtitle, $key: size);
+      @if (map-get($map: $header__subtitle, $key: weight) != none) {
+        font-weight: map-get($map: $header__subtitle, $key: weight);
+      }
+      @if (map-get($map: $header__subtitle, $key: spacing) != none) {
+        letter-spacing: map-get($map: $header__subtitle, $key: spacing);
+      }
+      @if (map-get($map: $header__subtitle, $key: leading) != none) {
+        line-height: map-get($map: $header__subtitle, $key: leading);
+      }
+      color: map-get($map: $header__subtitle, $key: color);
+    }
+  }
+}
+@mixin isHeaderParagraph {
+  @if (map-get($map: $header__paragraph, $key: used) == true) {
+    .header__paragraph {
+      width: map-get($map: $header__paragraph, $key: width);
+      max-width: map-get($map: $header__paragraph, $key: max-width);
+      margin: map-get($map: $header__paragraph, $key: margin);
+      font-size: map-get($map: $header__paragraph, $key: size);
+      @if (map-get($map: $header__paragraph, $key: weight) != none) {
+        font-weight: map-get($map: $header__paragraph, $key: weight);
+      }
+      @if (map-get($map: $header__paragraph, $key: spacing) != none) {
+        letter-spacing: map-get($map: $header__paragraph, $key: spacing);
+      }
+      @if (map-get($map: $header__paragraph, $key: leading) != none) {
+        line-height: map-get($map: $header__paragraph, $key: leading);
+      }
+      color: map-get($map: $header__paragraph, $key: color);
+    }
+  }
+}
+
+// Article Typography
+
+@mixin isArticleSpan {
+  @if (map-get($map: $article__span, $key: used) == true) {
+    .article__span {
+      margin: map-get($map: $article__span, $key: margin);
+      font-size: map-get($map: $article__span, $key: size);
+      @if (map-get($map: $article__span, $key: weight) != none) {
+        font-weight: map-get($map: $article__span, $key: weight);
+      }
+      @if (map-get($map: $article__span, $key: spacing) != none) {
+        letter-spacing: map-get($map: $article__span, $key: spacing);
+      }
+      @if (map-get($map: $article__span, $key: leading) != none) {
+        line-height: map-get($map: $article__span, $key: leading);
+      }
+      color: map-get($map: $article__span, $key: color);
+    }
+  }
+}
+@mixin isArticleTitle {
+  @if (map-get($map: $article__title, $key: used) == true) {
+    .article__title {
+      margin: map-get($map: $article__title, $key: margin);
+      font-size: map-get($map: $article__title, $key: size);
+      @if (map-get($map: $article__title, $key: weight) != none) {
+        font-weight: map-get($map: $article__title, $key: weight);
+      }
+      @if (map-get($map: $article__title, $key: spacing) != none) {
+        letter-spacing: map-get($map: $article__title, $key: spacing);
+      }
+      @if (map-get($map: $article__title, $key: leading) != none) {
+        line-height: map-get($map: $article__title, $key: leading);
+      }
+      color: map-get($map: $article__title, $key: color);
+    }
+  }
+}
+@mixin isArticleSubtitle {
+  @if (map-get($map: $article__subtitle, $key: used) == true) {
+    .article__subtitle {
+      margin: map-get($map: $article__subtitle, $key: margin);
+      font-size: map-get($map: $article__subtitle, $key: size);
+      @if (map-get($map: $article__subtitle, $key: weight) != none) {
+        font-weight: map-get($map: $article__subtitle, $key: weight);
+      }
+      @if (map-get($map: $article__subtitle, $key: spacing) != none) {
+        letter-spacing: map-get($map: $article__subtitle, $key: spacing);
+      }
+      @if (map-get($map: $article__subtitle, $key: leading) != none) {
+        line-height: map-get($map: $article__subtitle, $key: leading);
+      }
+      color: map-get($map: $article__subtitle, $key: color);
+    }
+  }
+}
+@mixin isArticleParagraph {
+  @if (map-get($map: $article__paragraph, $key: used) == true) {
+    .article__paragraph {
+      width: map-get($map: $article__paragraph, $key: width);
+      max-width: map-get($map: $article__paragraph, $key: max-width);
+      margin: map-get($map: $article__paragraph, $key: margin);
+      font-size: map-get($map: $article__paragraph, $key: size);
+      @if (map-get($map: $article__paragraph, $key: weight) != none) {
+        font-weight: map-get($map: $article__paragraph, $key: weight);
+      }
+      @if (map-get($map: $article__paragraph, $key: spacing) != none) {
+        letter-spacing: map-get($map: $article__paragraph, $key: spacing);
+      }
+      @if (map-get($map: $article__paragraph, $key: leading) != none) {
+        line-height: map-get($map: $article__paragraph, $key: leading);
+      }
+      color: map-get($map: $article__paragraph, $key: color);
+    }
+  }
+}
+
+// Footer Typography
+
+@mixin isFooterSpan {
+  @if (map-get($map: $footer__span, $key: used) == true) {
+    .footer__span {
+      margin: map-get($map: $footer__span, $key: margin);
+      font-size: map-get($map: $footer__span, $key: size);
+      @if (map-get($map: $footer__span, $key: weight) != none) {
+        font-weight: map-get($map: $footer__span, $key: weight);
+      }
+      @if (map-get($map: $footer__span, $key: spacing) != none) {
+        letter-spacing: map-get($map: $footer__span, $key: spacing);
+      }
+      @if (map-get($map: $footer__span, $key: leading) != none) {
+        line-height: map-get($map: $footer__span, $key: leading);
+      }
+      color: map-get($map: $footer__span, $key: color);
+    }
+  }
+}
+@mixin isFooterTitle {
+  @if (map-get($map: $footer__title, $key: used) == true) {
+    .footer__title {
+      margin: map-get($map: $footer__title, $key: margin);
+      font-size: map-get($map: $footer__title, $key: size);
+      @if (map-get($map: $footer__title, $key: weight) != none) {
+        font-weight: map-get($map: $footer__title, $key: weight);
+      }
+      @if (map-get($map: $footer__title, $key: spacing) != none) {
+        letter-spacing: map-get($map: $footer__title, $key: spacing);
+      }
+      @if (map-get($map: $footer__title, $key: leading) != none) {
+        line-height: map-get($map: $footer__title, $key: leading);
+      }
+      color: map-get($map: $footer__title, $key: color);
+    }
+  }
+}
+@mixin isFooterSubtitle {
+  @if (map-get($map: $footer__subtitle, $key: used) == true) {
+    .footer__subtitle {
+      margin: map-get($map: $footer__subtitle, $key: margin);
+      font-size: map-get($map: $footer__subtitle, $key: size);
+      @if (map-get($map: $footer__subtitle, $key: weight) != none) {
+        font-weight: map-get($map: $footer__subtitle, $key: weight);
+      }
+      @if (map-get($map: $footer__subtitle, $key: spacing) != none) {
+        letter-spacing: map-get($map: $footer__subtitle, $key: spacing);
+      }
+      @if (map-get($map: $footer__subtitle, $key: leading) != none) {
+        line-height: map-get($map: $footer__subtitle, $key: leading);
+      }
+      color: map-get($map: $footer__subtitle, $key: color);
+    }
+  }
+}
+@mixin isFooterParagraph {
+  @if (map-get($map: $footer__paragraph, $key: used) == true) {
+    .footer__paragraph {
+      width: map-get($map: $footer__paragraph, $key: width);
+      max-width: map-get($map: $footer__paragraph, $key: max-width);
+      margin: map-get($map: $footer__paragraph, $key: margin);
+      font-size: map-get($map: $footer__paragraph, $key: size);
+      @if (map-get($map: $footer__paragraph, $key: weight) != none) {
+        font-weight: map-get($map: $footer__paragraph, $key: weight);
+      }
+      @if (map-get($map: $footer__paragraph, $key: spacing) != none) {
+        letter-spacing: map-get($map: $footer__paragraph, $key: spacing);
+      }
+      @if (map-get($map: $footer__paragraph, $key: leading) != none) {
+        line-height: map-get($map: $footer__paragraph, $key: leading);
+      }
+      color: map-get($map: $footer__paragraph, $key: color);
+    }
+  }
+}
+
+/* Style Typography */
+
+/* Header Typography */
+@include isHeaderSpan();
+@include isHeaderTitle();
+@include isHeaderSubtitle();
+@include isHeaderParagraph();
+
+/* Article Typography */
+@include isArticleSpan();
+@include isArticleTitle();
+@include isArticleSubtitle();
+@include isArticleParagraph();
+
+/* Footer Typography */
+@include isFooterSpan();
+@include isFooterTitle();
+@include isFooterSubtitle();
+@include isFooterParagraph();
+
+// * Aling Content Mixin
+
+// Aling Left
+
+@mixin isTextLeft {
+  @if (map-get($map: $text-left, $key: used) == true) {
+    .text-left {
+      text-align: map-get($map: $text-left, $key: text-center);
+    }
+  }
+}
+@mixin isTextLeft-md {
+  @if (map-get($map: $text-left, $key: md-text-center) != none) {
+    .text-left {
+      text-align: map-get($map: $text-left, $key: md-text-center);
+    }
+  }
+}
+@mixin isTextLeft-lg {
+  @if (map-get($map: $text-left, $key: lg-text-center) != none) {
+    .text-left {
+      text-align: map-get($map: $text-left, $key: lg-text-center);
+    }
+  }
+}
+
+// Aling Center
+
+@mixin isTextCenter {
+  @if (map-get($map: $text-center, $key: used) == true) {
+    .text-center {
+      text-align: map-get($map: $text-center, $key: text-center);
+    }
+  }
+}
+@mixin isTextCenter-md {
+  @if (map-get($map: $text-center, $key: md-text-center) != none) {
+    .text-center {
+      text-align: map-get($map: $text-center, $key: md-text-center);
+    }
+  }
+}
+@mixin isTextCenter-lg {
+  @if (map-get($map: $text-center, $key: lg-text-center) != none) {
+    .text-center {
+      text-align: map-get($map: $text-center, $key: lg-text-center);
+    }
+  }
+}
+
+// Aling Right
+
+@mixin isTextRight {
+  @if (map-get($map: $text-right, $key: used) == true) {
+    .text-right {
+      text-align: map-get($map: $text-right, $key: text-center);
+    }
+  }
+}
+@mixin isTextRight-md {
+  @if (map-get($map: $text-right, $key: md-text-center) != none) {
+    .text-right {
+      text-align: map-get($map: $text-right, $key: md-text-center);
+    }
+  }
+}
+@mixin isTextRight-lg {
+  @if (map-get($map: $text-right, $key: lg-text-center) != none) {
+    .text-right {
+      text-align: map-get($map: $text-right, $key: lg-text-center);
+    }
+  }
+}
+/* Style Aling Content */
+
+@include isTextLeft();
+@include isTextCenter();
+@include isTextRight();
+
+//* Form Mixins
+
+// Form Typography
+
+@mixin isFormSpan {
+  @if (map-get($map: $form__span, $key: used) == true) {
+    .form__span {
+      margin: map-get($map: $form__span, $key: margin);
+      font-size: map-get($map: $form__span, $key: size);
+      @if (map-get($map: $form__span, $key: weight) != none) {
+        font-weight: map-get($map: $form__span, $key: weight);
+      }
+      @if (map-get($map: $form__span, $key: spacing) != none) {
+        letter-spacing: map-get($map: $form__span, $key: spacing);
+      }
+      @if (map-get($map: $form__span, $key: leading) != none) {
+        line-height: map-get($map: $form__span, $key: leading);
+      }
+      color: map-get($map: $form__span, $key: color);
+    }
+  }
+}
+@mixin isFormTitle {
+  @if (map-get($map: $form__title, $key: used) == true) {
+    .form__title {
+      margin: map-get($map: $form__title, $key: margin);
+      font-size: map-get($map: $form__title, $key: size);
+      @if (map-get($map: $form__title, $key: weight) != none) {
+        font-weight: map-get($map: $form__title, $key: weight);
+      }
+      @if (map-get($map: $form__title, $key: spacing) != none) {
+        letter-spacing: map-get($map: $form__title, $key: spacing);
+      }
+      @if (map-get($map: $form__title, $key: leading) != none) {
+        line-height: map-get($map: $form__title, $key: leading);
+      }
+      color: map-get($map: $form__title, $key: color);
+    }
+  }
+}
+@mixin isFormSubtitle {
+  @if (map-get($map: $form__subtitle, $key: used) == true) {
+    .form__subtitle {
+      margin: map-get($map: $form__subtitle, $key: margin);
+      font-size: map-get($map: $form__subtitle, $key: size);
+      @if (map-get($map: $form__subtitle, $key: weight) != none) {
+        font-weight: map-get($map: $form__subtitle, $key: weight);
+      }
+      @if (map-get($map: $form__subtitle, $key: spacing) != none) {
+        letter-spacing: map-get($map: $form__subtitle, $key: spacing);
+      }
+      @if (map-get($map: $form__subtitle, $key: leading) != none) {
+        line-height: map-get($map: $form__subtitle, $key: leading);
+      }
+      color: map-get($map: $form__subtitle, $key: color);
+    }
+  }
+}
+@mixin isFormParagraph {
+  @if (map-get($map: $form__paragraph, $key: used) == true) {
+    .form__paragraph {
+      width: map-get($map: $form__paragraph, $key: width);
+      max-width: map-get($map: $form__paragraph, $key: max-width);
+      margin: map-get($map: $form__paragraph, $key: margin);
+      font-size: map-get($map: $form__paragraph, $key: size);
+      @if (map-get($map: $form__paragraph, $key: weight) != none) {
+        font-weight: map-get($map: $form__paragraph, $key: weight);
+      }
+      @if (map-get($map: $form__paragraph, $key: spacing) != none) {
+        letter-spacing: map-get($map: $form__paragraph, $key: spacing);
+      }
+      @if (map-get($map: $form__paragraph, $key: leading) != none) {
+        line-height: map-get($map: $form__paragraph, $key: leading);
+      }
+      color: map-get($map: $form__paragraph, $key: color);
+    }
+  }
+}
+
+// Form Inputs
+
+@mixin isFormInput {
+  @if (map-get($map: $form__input, $key: used) == true) {
+    .form__input {
+      padding: map-get($map: $form__input, $key: padding);
+      color: map-get($map: $form__input, $key: color);
+      border: 1px solid map-get($map: $form__input, $key: color);
+      cursor: pointer;
+    }
+  }
+}
+@mixin isFormInput--small {
+  @if (map-get($map: $form__input--small, $key: used) == true) {
+    .form__input--small {
+      padding: map-get($map: $form__input--small, $key: padding);
+    }
+  }
+}
+@mixin isFormInput--medium {
+  @if (map-get($map: $form__input--medium, $key: used) == true) {
+    .form__input--medium {
+      padding: map-get($map: $form__input--medium, $key: padding);
+    }
+  }
+}
+@mixin isFormInput--large {
+  @if (map-get($map: $form__input--large, $key: used) == true) {
+    .form__input--large {
+      padding: map-get($map: $form__input--large, $key: padding);
+    }
+  }
+}
+
+// Form Button
+
+@mixin isFormBtn {
+  @if (map-get($map: $form__btn, $key: used) == true) {
+    .form__btn {
+      padding: map-get($map: $form__btn, $key: padding);
+      outline: none;
+      color: map-get($map: $form__btn, $key: color);
+      background-color: map-get($map: $form__btn, $key: bg);
+      border: 1.5px solid map-get($map: $form__btn, $key: border-color);
+      cursor: pointer;
+    }
+  }
+}
+
+/* Style Form */
+
+/* Form Typography */
+@include isFormSpan();
+@include isFormTitle();
+@include isFormSubtitle();
+@include isFormParagraph();
+
+/* Form Inputs */
+@include isFormInput();
+@include isFormInput--small();
+@include isFormInput--medium();
+@include isFormInput--large();
+
+/* Form Button */
+@include isFormBtn();
+
+//* Button Mixins
+
+// Button
+
+@mixin isBtn {
+  .btn {
+    margin: map-get($map: $btn, $key: margin);
+    font-size: map-get($map: $btn, $key: size);
+    font-weight: map-get($map: $btn, $key: weight);
+    color: map-get($map: $btn, $key: color);
+  }
+}
+
+// Buton Sizes
+
+@mixin isBtn--small {
+  @if (map-get($map: $btn--small, $key: used) == true) {
+    .btn--small {
+      padding: map-get($map: $btn--small, $key: padding);
+    }
+  }
+}
+@mixin isBtn--medium {
+  @if (map-get($map: $btn--medium, $key: used) == true) {
+    .btn--medium {
+      padding: map-get($map: $btn--medium, $key: padding);
+    }
+  }
+}
+@mixin isBtn--large {
+  @if (map-get($map: $btn--large, $key: used) == true) {
+    .btn--large {
+      padding: map-get($map: $btn--large, $key: padding);
+    }
+  }
+}
+
+// Button Form
+@mixin isBtn--square {
+  .btn--square {
+    padding: map-get($map: $btn--square, $key: padding);
+    color: map-get($map: $btn--square, $key: color);
+    background-color: map-get($map: $btn--square, $key: bg);
+    border: 1px solid map-get($map: $btn--square, $key: bg);
+  }
+}
+@mixin isBtn--square-active {
+  .btn--square:active {
+    background-color: map-get($map: $btn--square, $key: bg-hover);
+    border: 1px solid map-get($map: $btn--square, $key: bg-hover);
+  }
+}
+@mixin isBtn--square-hover {
+  .btn--square:hover {
+    background-color: map-get($map: $btn--square, $key: bg-hover);
+    border: 1px solid map-get($map: $btn--square, $key: bg-hover);
+  }
+}
+@mixin isBtn--rounded {
+  @if (map-get($map: $btn--rounded, $key: used) == true) {
+    $rounded: map-get(
+      $map: $btn--rounded,
+      $key: rounded,
+    );
+    .btn--rounded {
+      padding: map-get($map: $btn--rounded, $key: padding);
+      color: map-get($map: $btn--rounded, $key: color);
+      background-color: map-get($map: $btn--rounded, $key: bg);
+      border: 1px solid map-get($map: $btn--rounded, $key: bg);
+      border-radius: $rounded;
+      -webkit-border-radius: $rounded;
+      -moz-border-radius: $rounded;
+      -ms-border-radius: $rounded;
+      -o-border-radius: $rounded;
+    }
+  }
+}
+@mixin isBtn--rounded-active {
+  .btn--rounded:active {
+    background-color: map-get($map: $btn--rounded, $key: bg-hover);
+    border: 1px solid map-get($map: $btn--rounded, $key: bg-hover);
+  }
+}
+@mixin isBtn--rounded-hover {
+  .btn--rounded:hover {
+    background-color: map-get($map: $btn--rounded, $key: bg-hover);
+    border: 1px solid map-get($map: $btn--rounded, $key: bg-hover);
+  }
+}
+
+// Button Colors
+
+// Button Gray
+
+@mixin isBtn-gray {
+  .btn-gray {
+    @if (map-get($map: $btn-gray, $key: used) == true) {
+      color: $white;
+      background-color: $gray;
+      border: 1px solid $gray;
+    }
+  }
+}
+@mixin isBtn-gray-active {
+  @if (map-get($map: $btn-gray, $key: used) == true) {
+    .btn-gray:active {
+      background-color: map-get($map: $btn-gray, $key: bg-hover);
+      border: 1px solid map-get($map: $btn-gray, $key: bg-hover);
+    }
+  }
+}
+@mixin isBtn-gray-hover {
+  @if (map-get($map: $btn-gray, $key: used) == true) {
+    .btn-gray:hover {
+      background-color: map-get($map: $btn-gray, $key: bg-hover);
+      border: 1px solid map-get($map: $btn-gray, $key: bg-hover);
+    }
+  }
+}
+@mixin isBtn-gray--outline {
+  @if (map-get($map: $btn-gray, $key: used) == true) {
+    .btn-gray--outline {
+      color: map-get($map: $btn-gray--outline, $key: color);
+      background-color: map-get($map: $btn-gray--outline, $key: bg);
+      border: map-get($map: $btn-gray--outline, $key: border-color);
+    }
+  }
+}
+@mixin isBtn-gray--outline-active {
+  @if (map-get($map: $btn-gray, $key: used) == true) {
+    .btn-gray--outline:active {
+      color: map-get($map: $btn-gray--outline, $key: color-hover);
+      background-color: map-get($map: $btn-gray--outline, $key: bg-hover);
+      border: 1px solid map-get($map: $btn-gray--outline, $key: bg-hover);
+    }
+  }
+}
+@mixin isBtn-gray--outline-hover {
+  @if (map-get($map: $btn-gray, $key: used) == true) {
+    .btn-gray--outline:hover {
+      color: map-get($map: $btn-gray--outline, $key: color-hover);
+      background-color: map-get($map: $btn-gray--outline, $key: bg-hover);
+      border: 1px solid map-get($map: $btn-gray--outline, $key: bg-hover);
+    }
+  }
+}
+
+// Button Red
+
+@mixin isBtn-red {
+  .btn-red {
+    @if (map-get($map: $btn-red, $key: used) == true) {
+      color: $white;
+      background-color: $red;
+      border: 1px solid $red;
+    }
+  }
+}
+@mixin isBtn-red-active {
+  @if (map-get($map: $btn-red, $key: used) == true) {
+    .btn-red:active {
+      background-color: map-get($map: $btn-red, $key: bg-hover);
+      border: 1px solid map-get($map: $btn-red, $key: bg-hover);
+    }
+  }
+}
+@mixin isBtn-red-hover {
+  @if (map-get($map: $btn-red, $key: used) == true) {
+    .btn-red:hover {
+      background-color: map-get($map: $btn-red, $key: bg-hover);
+      border: 1px solid map-get($map: $btn-red, $key: bg-hover);
+    }
+  }
+}
+@mixin isBtn-red--outline {
+  @if (map-get($map: $btn-red, $key: used) == true) {
+    .btn-red--outline {
+      color: map-get($map: $btn-red--outline, $key: color);
+      background-color: map-get($map: $btn-red--outline, $key: bg);
+      border: map-get($map: $btn-red--outline, $key: border-color);
+    }
+  }
+}
+@mixin isBtn-red--outline-active {
+  @if (map-get($map: $btn-red, $key: used) == true) {
+    .btn-red--outline:active {
+      color: map-get($map: $btn-red--outline, $key: color-hover);
+      background-color: map-get($map: $btn-red--outline, $key: bg-hover);
+      border: 1px solid map-get($map: $btn-red--outline, $key: bg-hover);
+    }
+  }
+}
+@mixin isBtn-red--outline-hover {
+  @if (map-get($map: $btn-red, $key: used) == true) {
+    .btn-red--outline:hover {
+      color: map-get($map: $btn-red--outline, $key: color-hover);
+      background-color: map-get($map: $btn-red--outline, $key: bg-hover);
+      border: 1px solid map-get($map: $btn-red--outline, $key: bg-hover);
+    }
+  }
+}
+
+// Button Orange
+
+@mixin isBtn-orange {
+  .btn-orange {
+    @if (map-get($map: $btn-orange, $key: used) == true) {
+      color: $white;
+      background-color: $orange;
+      border: 1px solid $orange;
+    }
+  }
+}
+@mixin isBtn-orange-active {
+  @if (map-get($map: $btn-orange, $key: used) == true) {
+    .btn-orange:active {
+      background-color: map-get($map: $btn-orange, $key: bg-hover);
+      border: 1px solid map-get($map: $btn-orange, $key: bg-hover);
+    }
+  }
+}
+@mixin isBtn-orange-hover {
+  @if (map-get($map: $btn-orange, $key: used) == true) {
+    .btn-orange:hover {
+      background-color: map-get($map: $btn-orange, $key: bg-hover);
+      border: 1px solid map-get($map: $btn-orange, $key: bg-hover);
+    }
+  }
+}
+@mixin isBtn-orange--outline {
+  @if (map-get($map: $btn-orange, $key: used) == true) {
+    .btn-orange--outline {
+      color: map-get($map: $btn-orange--outline, $key: color);
+      background-color: map-get($map: $btn-orange--outline, $key: bg);
+      border: map-get($map: $btn-orange--outline, $key: border-color);
+    }
+  }
+}
+@mixin isBtn-orange--outline-active {
+  @if (map-get($map: $btn-orange, $key: used) == true) {
+    .btn-orange--outline:active {
+      color: map-get($map: $btn-orange--outline, $key: color-hover);
+      background-color: map-get($map: $btn-orange--outline, $key: bg-hover);
+      border: 1px solid map-get($map: $btn-orange--outline, $key: bg-hover);
+    }
+  }
+}
+@mixin isBtn-orange--outline-hover {
+  @if (map-get($map: $btn-orange, $key: used) == true) {
+    .btn-orange--outline:hover {
+      color: map-get($map: $btn-orange--outline, $key: color-hover);
+      background-color: map-get($map: $btn-orange--outline, $key: bg-hover);
+      border: 1px solid map-get($map: $btn-orange--outline, $key: bg-hover);
+    }
+  }
+}
+
+// Button Yellow
+
+@mixin isBtn-yellow {
+  .btn-yellow {
+    @if (map-get($map: $btn-yellow, $key: used) == true) {
+      color: $white;
+      background-color: $yellow;
+      border: 1px solid $yellow;
+    }
+  }
+}
+@mixin isBtn-yellow-active {
+  @if (map-get($map: $btn-yellow, $key: used) == true) {
+    .btn-yellow:active {
+      background-color: map-get($map: $btn-yellow, $key: bg-hover);
+      border: 1px solid map-get($map: $btn-yellow, $key: bg-hover);
+    }
+  }
+}
+@mixin isBtn-yellow-hover {
+  @if (map-get($map: $btn-yellow, $key: used) == true) {
+    .btn-yellow:hover {
+      background-color: map-get($map: $btn-yellow, $key: bg-hover);
+      border: 1px solid map-get($map: $btn-yellow, $key: bg-hover);
+    }
+  }
+}
+@mixin isBtn-yellow--outline {
+  @if (map-get($map: $btn-yellow, $key: used) == true) {
+    .btn-yellow--outline {
+      color: map-get($map: $btn-yellow--outline, $key: color);
+      background-color: map-get($map: $btn-yellow--outline, $key: bg);
+      border: map-get($map: $btn-yellow--outline, $key: border-color);
+    }
+  }
+}
+@mixin isBtn-yellow--outline-active {
+  @if (map-get($map: $btn-yellow, $key: used) == true) {
+    .btn-yellow--outline:active {
+      color: map-get($map: $btn-yellow--outline, $key: color-hover);
+      background-color: map-get($map: $btn-yellow--outline, $key: bg-hover);
+      border: 1px solid map-get($map: $btn-yellow--outline, $key: bg-hover);
+    }
+  }
+}
+@mixin isBtn-yellow--outline-hover {
+  @if (map-get($map: $btn-yellow, $key: used) == true) {
+    .btn-yellow--outline:hover {
+      color: map-get($map: $btn-yellow--outline, $key: color-hover);
+      background-color: map-get($map: $btn-yellow--outline, $key: bg-hover);
+      border: 1px solid map-get($map: $btn-yellow--outline, $key: bg-hover);
+    }
+  }
+}
+
+// Button Green
+
+@mixin isBtn-green {
+  .btn-green {
+    @if (map-get($map: $btn-green, $key: used) == true) {
+      color: $white;
+      background-color: $green;
+      border: 1px solid $green;
+    }
+  }
+}
+@mixin isBtn-green-active {
+  @if (map-get($map: $btn-green, $key: used) == true) {
+    .btn-green:active {
+      background-color: map-get($map: $btn-green, $key: bg-hover);
+      border: 1px solid map-get($map: $btn-green, $key: bg-hover);
+    }
+  }
+}
+@mixin isBtn-green-hover {
+  @if (map-get($map: $btn-green, $key: used) == true) {
+    .btn-green:hover {
+      background-color: map-get($map: $btn-green, $key: bg-hover);
+      border: 1px solid map-get($map: $btn-green, $key: bg-hover);
+    }
+  }
+}
+@mixin isBtn-green--outline {
+  @if (map-get($map: $btn-green, $key: used) == true) {
+    .btn-green--outline {
+      color: map-get($map: $btn-green--outline, $key: color);
+      background-color: map-get($map: $btn-green--outline, $key: bg);
+      border: map-get($map: $btn-green--outline, $key: border-color);
+    }
+  }
+}
+@mixin isBtn-green--outline-active {
+  @if (map-get($map: $btn-green, $key: used) == true) {
+    .btn-green--outline:active {
+      color: map-get($map: $btn-green--outline, $key: color-hover);
+      background-color: map-get($map: $btn-green--outline, $key: bg-hover);
+      border: 1px solid map-get($map: $btn-green--outline, $key: bg-hover);
+    }
+  }
+}
+@mixin isBtn-green--outline-hover {
+  @if (map-get($map: $btn-green, $key: used) == true) {
+    .btn-green--outline:hover {
+      color: map-get($map: $btn-green--outline, $key: color-hover);
+      background-color: map-get($map: $btn-green--outline, $key: bg-hover);
+      border: 1px solid map-get($map: $btn-green--outline, $key: bg-hover);
+    }
+  }
+}
+
+// Button Blue
+
+@mixin isBtn-blue {
+  .btn-blue {
+    @if (map-get($map: $btn-blue, $key: used) == true) {
+      color: $white;
+      background-color: $blue;
+      border: 1px solid $blue;
+    }
+  }
+}
+@mixin isBtn-blue-active {
+  @if (map-get($map: $btn-blue, $key: used) == true) {
+    .btn-blue:active {
+      background-color: map-get($map: $btn-blue, $key: bg-hover);
+      border: 1px solid map-get($map: $btn-blue, $key: bg-hover);
+    }
+  }
+}
+@mixin isBtn-blue-hover {
+  @if (map-get($map: $btn-blue, $key: used) == true) {
+    .btn-blue:hover {
+      background-color: map-get($map: $btn-blue, $key: bg-hover);
+      border: 1px solid map-get($map: $btn-blue, $key: bg-hover);
+    }
+  }
+}
+@mixin isBtn-blue--outline {
+  @if (map-get($map: $btn-blue, $key: used) == true) {
+    .btn-blue--outline {
+      color: map-get($map: $btn-blue--outline, $key: color);
+      background-color: map-get($map: $btn-blue--outline, $key: bg);
+      border: map-get($map: $btn-blue--outline, $key: border-color);
+    }
+  }
+}
+@mixin isBtn-blue--outline-active {
+  @if (map-get($map: $btn-blue, $key: used) == true) {
+    .btn-blue--outline:active {
+      color: map-get($map: $btn-blue--outline, $key: color-hover);
+      background-color: map-get($map: $btn-blue--outline, $key: bg-hover);
+      border: 1px solid map-get($map: $btn-blue--outline, $key: bg-hover);
+    }
+  }
+}
+@mixin isBtn-blue--outline-hover {
+  @if (map-get($map: $btn-blue, $key: used) == true) {
+    .btn-blue--outline:hover {
+      color: map-get($map: $btn-blue--outline, $key: color-hover);
+      background-color: map-get($map: $btn-blue--outline, $key: bg-hover);
+      border: 1px solid map-get($map: $btn-blue--outline, $key: bg-hover);
+    }
+  }
+}
+
+// Button Violet
+
+@mixin isBtn-violet {
+  .btn-violet {
+    @if (map-get($map: $btn-violet, $key: used) == true) {
+      color: $white;
+      background-color: $violet;
+      border: 1px solid $violet;
+    }
+  }
+}
+@mixin isBtn-violet-active {
+  @if (map-get($map: $btn-violet, $key: used) == true) {
+    .btn-violet:active {
+      background-color: map-get($map: $btn-violet, $key: bg-hover);
+      border: 1px solid map-get($map: $btn-violet, $key: bg-hover);
+    }
+  }
+}
+@mixin isBtn-violet-hover {
+  @if (map-get($map: $btn-violet, $key: used) == true) {
+    .btn-violet:hover {
+      background-color: map-get($map: $btn-violet, $key: bg-hover);
+      border: 1px solid map-get($map: $btn-violet, $key: bg-hover);
+    }
+  }
+}
+@mixin isBtn-violet--outline {
+  @if (map-get($map: $btn-violet, $key: used) == true) {
+    .btn-violet--outline {
+      color: map-get($map: $btn-violet--outline, $key: color);
+      background-color: map-get($map: $btn-violet--outline, $key: bg);
+      border: map-get($map: $btn-violet--outline, $key: border-color);
+    }
+  }
+}
+@mixin isBtn-violet--outline-active {
+  @if (map-get($map: $btn-violet, $key: used) == true) {
+    .btn-violet--outline:active {
+      color: map-get($map: $btn-violet--outline, $key: color-hover);
+      background-color: map-get($map: $btn-violet--outline, $key: bg-hover);
+      border: 1px solid map-get($map: $btn-violet--outline, $key: bg-hover);
+    }
+  }
+}
+@mixin isBtn-violet--outline-hover {
+  @if (map-get($map: $btn-violet, $key: used) == true) {
+    .btn-violet--outline:hover {
+      color: map-get($map: $btn-violet--outline, $key: color-hover);
+      background-color: map-get($map: $btn-violet--outline, $key: bg-hover);
+      border: 1px solid map-get($map: $btn-violet--outline, $key: bg-hover);
+    }
+  }
+}
+
+// Button Fuchsia
+
+@mixin isBtn-fuchsia {
+  .btn-fuchsia {
+    @if (map-get($map: $btn-fuchsia, $key: used) == true) {
+      color: $white;
+      background-color: $fuchsia;
+      border: 1px solid $fuchsia;
+    }
+  }
+}
+@mixin isBtn-fuchsia-active {
+  @if (map-get($map: $btn-fuchsia, $key: used) == true) {
+    .btn-fuchsia:active {
+      background-color: map-get($map: $btn-fuchsia, $key: bg-hover);
+      border: 1px solid map-get($map: $btn-fuchsia, $key: bg-hover);
+    }
+  }
+}
+@mixin isBtn-fuchsia-hover {
+  @if (map-get($map: $btn-fuchsia, $key: used) == true) {
+    .btn-fuchsia:hover {
+      background-color: map-get($map: $btn-fuchsia, $key: bg-hover);
+      border: 1px solid map-get($map: $btn-fuchsia, $key: bg-hover);
+    }
+  }
+}
+@mixin isBtn-fuchsia--outline {
+  @if (map-get($map: $btn-fuchsia, $key: used) == true) {
+    .btn-fuchsia--outline {
+      color: map-get($map: $btn-fuchsia--outline, $key: color);
+      background-color: map-get($map: $btn-fuchsia--outline, $key: bg);
+      border: map-get($map: $btn-fuchsia--outline, $key: border-color);
+    }
+  }
+}
+@mixin isBtn-fuchsia--outline-active {
+  @if (map-get($map: $btn-fuchsia, $key: used) == true) {
+    .btn-fuchsia--outline:active {
+      color: map-get($map: $btn-fuchsia--outline, $key: color-hover);
+      background-color: map-get($map: $btn-fuchsia--outline, $key: bg-hover);
+      border: 1px solid map-get($map: $btn-fuchsia--outline, $key: bg-hover);
+    }
+  }
+}
+@mixin isBtn-fuchsia--outline-hover {
+  @if (map-get($map: $btn-fuchsia, $key: used) == true) {
+    .btn-fuchsia--outline:hover {
+      color: map-get($map: $btn-fuchsia--outline, $key: color-hover);
+      background-color: map-get($map: $btn-fuchsia--outline, $key: bg-hover);
+      border: 1px solid map-get($map: $btn-fuchsia--outline, $key: bg-hover);
+    }
+  }
+}
+
+/* Style Buttons */
+
+/* Button */
+@include isBtn();
+@include isBtn--square();
+@include isBtn--rounded();
+@include isBtn--small();
+@include isBtn--medium();
+@include isBtn--large();
+
+/* Button Gray  */
+@include isBtn-gray();
+@include isBtn-gray--outline();
+
+/* Button Red  */
+@include isBtn-red();
+@include isBtn-red--outline();
+
+/* Button Orange  */
+@include isBtn-orange();
+@include isBtn-orange--outline();
+
+/* Button Yellow  */
+@include isBtn-yellow();
+@include isBtn-yellow--outline();
+
+/* Button Green  */
+@include isBtn-green();
+@include isBtn-green--outline();
+
+/* Button Blue  */
+@include isBtn-blue();
+@include isBtn-blue--outline();
+
+/* Button Violet  */
+@include isBtn-violet();
+@include isBtn-violet--outline();
+
+/* Button Fuchsia  */
+@include isBtn-fuchsia();
+@include isBtn-fuchsia--outline();
+
+//* Card Mixins
+
+// Cards
+
+@mixin isCards {
+  .cards {
+    position: map-get($map: $cards, $key: position);
+    width: map-get($map: $cards, $key: width);
+    display: map-get($map: $cards, $key: display);
+    justify-content: map-get($map: $cards, $key: justify-content);
+    flex-wrap: map-get($map: $cards, $key: flex-wrap);
+  }
+}
+
+// Card
+
+@mixin isCard {
+  .card {
+    $rounded: map-get(
+      $map: $card,
+      $key: rounded,
+    );
+    position: map-get($map: $card, $key: position);
+    width: map-get($map: $card, $key: width);
+    max-width: map-get($map: $card, $key: max-width);
+    padding: map-get($map: $card, $key: padding);
+    margin: map-get($map: $card, $key: margin);
+    @if (map-get($map: $card, $key: bg-color) != none) {
+      background-color: map-get($map: $card, $key: bg-color);
+    }
+    @if (map-get($map: $card, $key: rounded) != none) {
+      border-radius: $rounded;
+      -webkit-border-radius: $rounded;
+      -moz-border-radius: $rounded;
+      -ms-border-radius: $rounded;
+      -o-border-radius: $rounded;
+    }
+    @if (map-get($map: $card, $key: border-color) != none) {
+      border: map-get($map: $card, $key: border-color);
+    }
+    @if (map-get($map: $card, $key: box-shadow) != none) {
+      box-shadow: map-get($map: $card, $key: box-shadow);
+    }
+  }
+}
+@mixin isCard--small {
+  @if (map-get($map: $card--small, $key: used) == true) {
+    $rounded: map-get(
+      $map: $card--small,
+      $key: rounded,
+    );
+    .card--small {
+      max-width: map-get($map: $card--small, $key: max-width);
+      @if (map-get($map: $card--small, $key: padding) != none) {
+        padding: map-get($map: $card--small, $key: padding);
+      }
+      @if (map-get($map: $card--small, $key: margin) != none) {
+        margin: map-get($map: $card--small, $key: margin);
+      }
+      @if (map-get($map: $card--small, $key: bg-color) != none) {
+        background-color: map-get($map: $card--small, $key: bg-color);
+      }
+      @if (map-get($map: $card--small, $key: rounded) != none) {
+        border-radius: $rounded;
+        -webkit-border-radius: $rounded;
+        -moz-border-radius: $rounded;
+        -ms-border-radius: $rounded;
+        -o-border-radius: $rounded;
+      }
+      @if (map-get($map: $card--small, $key: border) != none) {
+        border: map-get($map: $card--small, $key: border);
+      }
+      @if (map-get($map: $card--small, $key: box-shadow) != none) {
+        box-shadow: map-get($map: $card--small, $key: box-shadow);
+      }
+    }
+  }
+}
+@mixin isCard--medium {
+  @if (map-get($map: $card--medium, $key: used) == true) {
+    $rounded: map-get(
+      $map: $card--medium,
+      $key: rounded,
+    );
+    .card--medium {
+      max-width: map-get($map: $card--medium, $key: max-width);
+      @if (map-get($map: $card--medium, $key: padding) != none) {
+        padding: map-get($map: $card--medium, $key: padding);
+      }
+      @if (map-get($map: $card--medium, $key: margin) != none) {
+        margin: map-get($map: $card--medium, $key: margin);
+      }
+      @if (map-get($map: $card--medium, $key: bg-color) != none) {
+        background-color: map-get($map: $card--medium, $key: bg-color);
+      }
+      @if (map-get($map: $card--medium, $key: rounded) != none) {
+        border-radius: $rounded;
+        -webkit-border-radius: $rounded;
+        -moz-border-radius: $rounded;
+        -ms-border-radius: $rounded;
+        -o-border-radius: $rounded;
+      }
+      @if (map-get($map: $card--medium, $key: border) != none) {
+        border: map-get($map: $card--medium, $key: border);
+      }
+      @if (map-get($map: $card--medium, $key: box-shadow) != none) {
+        box-shadow: map-get($map: $card--medium, $key: box-shadow);
+      }
+    }
+  }
+}
+@mixin isCard--large {
+  @if (map-get($map: $card--large, $key: used) == true) {
+    $rounded: map-get(
+      $map: $card--large,
+      $key: rounded,
+    );
+    .card--large {
+      max-width: map-get($map: $card--large, $key: max-width);
+      @if (map-get($map: $card--large, $key: padding) != none) {
+        padding: map-get($map: $card--large, $key: padding);
+      }
+      @if (map-get($map: $card--large, $key: margin) != none) {
+        margin: map-get($map: $card--large, $key: margin);
+      }
+      @if (map-get($map: $card--large, $key: bg-color) != none) {
+        background-color: map-get($map: $card--large, $key: bg-color);
+      }
+      @if (map-get($map: $card--large, $key: rounded) != none) {
+        border-radius: $rounded;
+        -webkit-border-radius: $rounded;
+        -moz-border-radius: $rounded;
+        -ms-border-radius: $rounded;
+        -o-border-radius: $rounded;
+      }
+      @if (map-get($map: $card--large, $key: border) != none) {
+        border: map-get($map: $card--large, $key: border);
+      }
+      @if (map-get($map: $card--large, $key: box-shadow) != none) {
+        box-shadow: map-get($map: $card--large, $key: box-shadow);
+      }
+    }
+  }
+}
+
+// Card Picture
+
+@mixin isCardPicture {
+  .card__picture {
+    position: map-get($map: $card__picture, $key: relative);
+    width: map-get($map: $card__picture, $key: width);
+    height: map-get($map: $card__picture, $key: height);
+    @if (map-get($map: $card__picture, $key: padding)) {
+      padding: map-get($map: $card__picture, $key: padding);
+    }
+    @if (map-get($map: $card__picture, $key: margin)) {
+      margin: map-get($map: $card__picture, $key: margin);
+    }
+  }
+}
+@mixin isCardPicture--small {
+  @if (map-get($map: $card__picture--small, $key: used) == true) {
+    .card__picture--small {
+      height: map-get($map: $card__picture--small, $key: height);
+    }
+  }
+}
+@mixin isCardPicture--medium {
+  @if (map-get($map: $card__picture--medium, $key: used) == true) {
+    .card__picture--medium {
+      height: map-get($map: $card__picture--medium, $key: height);
+    }
+  }
+}
+@mixin isCardPicture--large {
+  @if (map-get($map: $card__picture--large, $key: used) == true) {
+    .card__picture--large {
+      height: map-get($map: $card__picture--large, $key: height);
+    }
+  }
+}
+
+// Card Title
+
+@mixin isCardTitle {
+  .card__title {
+    margin: map-get($map: $card__title, $key: margin);
+    font-size: map-get($map: $card__title, $key: size);
+    @if (map-get($map: $card__title, $key: weight) != none) {
+      font-weight: map-get($map: $card__title, $key: weight);
+    }
+    @if (map-get($map: $card__title, $key: spacing) != none) {
+      letter-spacing: map-get($map: $card__title, $key: spacing);
+    }
+    @if (map-get($map: $card__title, $key: leading) != none) {
+      line-height: map-get($map: $card__title, $key: leading);
+    }
+    @if (map-get($map: $card__title, $key: color) != none) {
+      color: map-get($map: $card__title, $key: color);
+    }
+  }
+}
+@mixin isCardTitle--small {
+  @if (map-get($map: $card__title--small, $key: used) == true) {
+    .card__title--small {
+      font-size: map-get($map: $card__title--small, $key: size);
+    }
+  }
+}
+@mixin isCardTitle--medium {
+  @if (map-get($map: $card__title--medium, $key: used) == true) {
+    .card__title--medium {
+      font-size: map-get($map: $card__title--medium, $key: size);
+    }
+  }
+}
+@mixin isCardTitle--large {
+  @if (map-get($map: $card__title--large, $key: used) == true) {
+    .card__title--large {
+      font-size: map-get($map: $card__title--large, $key: size);
+    }
+  }
+}
+
+// Card Subtitle
+
+@mixin isCardSubtitle {
+  .card__subtitle {
+    margin: map-get($map: $card__subtitle, $key: margin);
+    font-size: map-get($map: $card__subtitle, $key: size);
+    @if (map-get($map: $card__subtitle, $key: weight) != none) {
+      font-weight: map-get($map: $card__subtitle, $key: weight);
+    }
+    @if (map-get($map: $card__subtitle, $key: spacing) != none) {
+      letter-spacing: map-get($map: $card__subtitle, $key: spacing);
+    }
+    @if (map-get($map: $card__subtitle, $key: leading) != none) {
+      line-height: map-get($map: $card__subtitle, $key: leading);
+    }
+    @if (map-get($map: $card__subtitle, $key: color) != none) {
+      color: map-get($map: $card__subtitle, $key: color);
+    }
+  }
+}
+
+// Card Paragraph
+
+@mixin isCardParagraph {
+  .card__paragraph {
+    margin: map-get($map: $card__paragraph, $key: margin);
+    font-size: map-get($map: $card__paragraph, $key: size);
+    @if (map-get($map: $card__paragraph, $key: weight) != none) {
+      font-weight: map-get($map: $card__paragraph, $key: weight);
+    }
+    @if (map-get($map: $card__paragraph, $key: spacing) != none) {
+      letter-spacing: map-get($map: $card__paragraph, $key: spacing);
+    }
+    @if (map-get($map: $card__paragraph, $key: leading) != none) {
+      line-height: map-get($map: $card__paragraph, $key: leading);
+    }
+    @if (map-get($map: $card__paragraph, $key: color) != none) {
+      color: map-get($map: $card__paragraph, $key: color);
+    }
+  }
+}
+
+/* Style Card */
+
+/* Cards */
+@include isCards();
+
+/* Card */
+@include isCard();
+@include isCard--small();
+@include isCard--medium();
+@include isCard--large();
+
+/* Card Picture */
+@include isCardPicture();
+@include isCardPicture--small();
+@include isCardPicture--medium();
+@include isCardPicture--large();
+
+/* Card Title */
+@include isCardTitle();
+@include isCardTitle--small();
+@include isCardTitle--medium();
+@include isCardTitle--large();
+
+/* Card Subitle */
+@include isCardSubtitle();
+
+/* Card Paragraph */
+@include isCardParagraph();
+
+//* Icon Mixins
+
+//Icon Nav
+
+@mixin isIconNav {
+  @if (map-get($map: $icon-nav, $key: used) == true) {
+    .icon-nav {
+      font-size: map-get($map: $icon-nav, $key: size);
+      color: map-get($map: $icon-nav, $key: color);
+      cursor: pointer;
+    }
+  }
+}
+@mixin isIconNav--active {
+  @if (map-get($map: $icon-nav, $key: used) == true) {
+    .icon-nav:active {
+      color: map-get($map: $icon-nav, $key: color-hover);
+    }
+  }
+}
+@mixin isIconNav--hover {
+  @if (map-get($map: $icon-nav, $key: used) == true) {
+    .icon-nav:hover {
+      color: map-get($map: $icon-nav, $key: color-hover);
+    }
+  }
+}
+
+//Icon Header
+
+@mixin isIconHeader {
+  @if (map-get($map: $icon-header, $key: used) == true) {
+    .icon-header {
+      font-size: map-get($map: $icon-header, $key: size);
+      color: map-get($map: $icon-header, $key: color);
+      cursor: pointer;
+    }
+  }
+}
+@mixin isIconHeader--active {
+  @if (map-get($map: $icon-header, $key: used) == true) {
+    .icon-header:active {
+      color: map-get($map: $icon-header, $key: color-hover);
+    }
+  }
+}
+@mixin isIconHeader--hover {
+  @if (map-get($map: $icon-header, $key: used) == true) {
+    .icon-header:hover {
+      color: map-get($map: $icon-header, $key: color-hover);
+    }
+  }
+}
+
+//Icon Article
+
+@mixin isIconArticle {
+  @if (map-get($map: $icon-article, $key: used) == true) {
+    .icon-article {
+      font-size: map-get($map: $icon-article, $key: size);
+      color: map-get($map: $icon-article, $key: color);
+      cursor: pointer;
+    }
+  }
+}
+@mixin isIconArticle--active {
+  @if (map-get($map: $icon-article, $key: used) == true) {
+    .icon-article:active {
+      color: map-get($map: $icon-article, $key: color-hover);
+    }
+  }
+}
+@mixin isIconArticle--hover {
+  @if (map-get($map: $icon-article, $key: used) == true) {
+    .icon-article:hover {
+      color: map-get($map: $icon-article, $key: color-hover);
+    }
+  }
+}
+
+//Icon Card
+
+@mixin isIconCard {
+  @if (map-get($map: $icon-card, $key: used) == true) {
+    .icon-card {
+      font-size: map-get($map: $icon-card, $key: size);
+      color: map-get($map: $icon-card, $key: color);
+      cursor: pointer;
+    }
+  }
+}
+@mixin isIconCard--active {
+  @if (map-get($map: $icon-card, $key: used) == true) {
+    .icon-card:active {
+      color: map-get($map: $icon-card, $key: color-hover);
+    }
+  }
+}
+@mixin isIconCard--hover {
+  @if (map-get($map: $icon-card, $key: used) == true) {
+    .icon-card:hover {
+      color: map-get($map: $icon-card, $key: color-hover);
+    }
+  }
+}
+
+//Icon Foter
+
+@mixin isIconFooter {
+  @if (map-get($map: $icon-footer, $key: used) == true) {
+    .icon-footer {
+      font-size: map-get($map: $icon-footer, $key: size);
+      color: map-get($map: $icon-footer, $key: color);
+      cursor: pointer;
+    }
+  }
+}
+@mixin isIconFooter--active {
+  @if (map-get($map: $icon-footer, $key: used) == true) {
+    .icon-footer:active {
+      color: map-get($map: $icon-footer, $key: color-hover);
+    }
+  }
+}
+@mixin isIconFooter--hover {
+  @if (map-get($map: $icon-footer, $key: used) == true) {
+    .icon-footer:hover {
+      color: map-get($map: $icon-footer, $key: color-hover);
+    }
+  }
+}
+
+/* Style Icons */
+
+/* Icon Nav */
+@include isIconNav();
+
+/* Icon Header */
+@include isIconHeader();
+
+/* Icon Article */
+@include isIconArticle();
+
+/* Icon Card */
+@include isIconCard();
+
+/* Icon Footer */
+@include isIconFooter();
+
+//* Color Text Mixins
+
+// Text Gray
+
+@mixin isTextGray {
+  @if (map-get($map: $text-gray, $key: used) == true) {
+    .text-gray {
+      color: map-get($map: $text-gray, $key: color);
+    }
+  }
+}
+
+// Text Red
+
+@mixin isTextRed {
+  @if (map-get($map: $text-red, $key: used) == true) {
+    .text-red {
+      color: map-get($map: $text-red, $key: color);
+    }
+  }
+}
+
+// Text Orange
+
+@mixin isTextOrange {
+  @if (map-get($map: $text-orange, $key: used) == true) {
+    .text-orange {
+      color: map-get($map: $text-orange, $key: color);
+    }
+  }
+}
+
+// Text Yellow
+
+@mixin isTextYellow {
+  @if (map-get($map: $text-yellow, $key: used) == true) {
+    .text-yellow {
+      color: map-get($map: $text-yellow, $key: color);
+    }
+  }
+}
+
+// Text Green
+
+@mixin isTextGreen {
+  @if (map-get($map: $text-green, $key: used) == true) {
+    .text-green {
+      color: map-get($map: $text-green, $key: color);
+    }
+  }
+}
+
+// Text Blue
+
+@mixin isTextBlue {
+  @if (map-get($map: $text-blue, $key: used) == true) {
+    .text-blue {
+      color: map-get($map: $text-blue, $key: color);
+    }
+  }
+}
+
+// Text Violet
+
+@mixin isTextViolet {
+  @if (map-get($map: $text-violet, $key: used) == true) {
+    .text-violet {
+      color: map-get($map: $text-violet, $key: color);
+    }
+  }
+}
+
+// Text Fuchsia
+
+@mixin isTextFuchsia {
+  @if (map-get($map: $text-fuchsia, $key: used) == true) {
+    .text-fuchsia {
+      color: map-get($map: $text-fuchsia, $key: color);
+    }
+  }
+}
+
+// Text Black
+
+@mixin isTextBlack {
+  @if (map-get($map: $text-black, $key: used) == true) {
+    .text-black {
+      color: map-get($map: $text-black, $key: color);
+    }
+  }
+}
+
+// Text White
+
+@mixin isTextWhite {
+  @if (map-get($map: $text-white, $key: used) == true) {
+    .text-white {
+      color: map-get($map: $text-white, $key: color);
+    }
+  }
+}
+
+// Text Light
+
+@mixin isTextLight {
+  @if (map-get($map: $text-light, $key: used) == true) {
+    .text-light {
+      color: map-get($map: $text-light, $key: color);
+    }
+  }
+}
+
+// Text Gradient
+
+@mixin isTextGradient {
+  @if (map-get($map: $text-gradient, $key: used) == true) {
+    .text-gradient {
+      background-image: map-get($map: $text-gradient, $key: color);
+      background-clip: text;
+      -webkit-background-clip: text;
+      text-fill-color: transparent;
+      -webkit-text-fill-color: transparent;
+    }
+  }
+}
+
+/* Style Color Text */
+
+/* Text Gray */
+@include isTextGray();
+
+/* Text Red */
+@include isTextRed();
+
+/* Text Orange */
+@include isTextOrange();
+
+/* Text Yellow */
+@include isTextYellow();
+
+/* Text Green */
+@include isTextGreen();
+
+/* Text Blue */
+@include isTextBlue();
+
+/* Text Violet */
+@include isTextViolet();
+
+/* Text Fuchsia */
+@include isTextFuchsia();
+
+/* Text Black */
+@include isTextBlack();
+
+/* Text White */
+@include isTextWhite();
+
+/* Text Light */
+@include isTextLight();
+
+/* Text Gradient */
+@include isTextGradient();
+
+//* Background Mixins
+
+// Background Gray
+
+@mixin isBackgroundGray {
+  @if (map-get($map: $bg-gray, $key: used) == true) {
+    .bg-gray {
+      background-color: map-get($map: $bg-gray, $key: background-color);
+    }
+  }
+}
+
+// Background Red
+
+@mixin isBackgroundRed {
+  @if (map-get($map: $bg-red, $key: used) == true) {
+    .bg-red {
+      background-color: map-get($map: $bg-red, $key: background-color);
+    }
+  }
+}
+
+// Background Orange
+
+@mixin isBackgroundOrange {
+  @if (map-get($map: $bg-orange, $key: used) == true) {
+    .bg-orange {
+      background-color: map-get($map: $bg-orange, $key: background-color);
+    }
+  }
+}
+
+// Background Yellow
+
+@mixin isBackgroundYellow {
+  @if (map-get($map: $bg-yellow, $key: used) == true) {
+    .bg-yellow {
+      background-color: map-get($map: $bg-yellow, $key: background-color);
+    }
+  }
+}
+
+// Background Green
+
+@mixin isBackgroundGreen {
+  @if (map-get($map: $bg-green, $key: used) == true) {
+    .bg-green {
+      background-color: map-get($map: $bg-green, $key: background-color);
+    }
+  }
+}
+
+// Background Blue
+
+@mixin isBackgroundBlue {
+  @if (map-get($map: $bg-blue, $key: used) == true) {
+    .bg-blue {
+      background-color: map-get($map: $bg-blue, $key: background-color);
+    }
+  }
+}
+
+// Background Violet
+
+@mixin isBackgroundViolet {
+  @if (map-get($map: $bg-violet, $key: used) == true) {
+    .bg-violet {
+      background-color: map-get($map: $bg-violet, $key: background-color);
+    }
+  }
+}
+
+// Background Fuchsia
+
+@mixin isBackgroundFuchsia {
+  @if (map-get($map: $bg-fuchsia, $key: used) == true) {
+    .bg-fuchsia {
+      background-color: map-get($map: $bg-fuchsia, $key: background-color);
+    }
+  }
+}
+
+// Background Black
+
+@mixin isBackgroundBlack {
+  @if (map-get($map: $bg-black, $key: used) == true) {
+    .bg-black {
+      background-color: map-get($map: $bg-black, $key: background-color);
+    }
+  }
+}
+
+// Background White
+
+@mixin isBackgroundWhite {
+  @if (map-get($map: $bg-white, $key: used) == true) {
+    .bg-white {
+      background-color: map-get($map: $bg-white, $key: background-color);
+    }
+  }
+}
+
+// Background Light
+
+@mixin isBackgroundLight {
+  @if (map-get($map: $bg-light, $key: used) == true) {
+    .bg-light {
+      background-color: map-get($map: $bg-light, $key: background-color);
+    }
+  }
+}
+
+// Background Light
+
+@mixin isBackgroundGradient {
+  @if (map-get($map: $bg-gradient, $key: used) == true) {
+    .bg-gradient {
+      background: map-get($map: $bg-gradient, $key: background-color);
+    }
+  }
+}
+
+// Background Images
+
+@mixin isBackgroundImage {
+  .bg-header,
+  .bg-article,
+  .bg-article-two,
+  .bg-article-three,
+  .bg-footer {
+    background-image: map-get($map: $bg-header, $key: background-image);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  @if (map-get($map: $bg-article, $key: used) == true) {
+    .bg-article {
+      background-image: map-get($map: $bg-article, $key: background-image);
+    }
+  }
+
+  @if (map-get($map: $bg-article-two, $key: used) == true) {
+    .bg-article-two {
+      background-image: map-get($map: $bg-article-two, $key: background-image);
+    }
+  }
+
+  @if (map-get($map: $bg-article-three, $key: used) == true) {
+    .bg-article-three {
+      background-image: map-get(
+        $map: $bg-article-three,
+        $key: background-image
+      );
+    }
+  }
+
+  @if (map-get($map: $bg-footer, $key: used) == true) {
+    .bg-footer {
+      background-image: map-get($map: $bg-footer, $key: background-image);
+    }
+  }
+}
+
+/* Style Bkacground */
+
+/* Background Gray  */
+@include isBackgroundGray();
+
+/* Background Red  */
+@include isBackgroundRed();
+
+/* Background Orange  */
+@include isBackgroundOrange();
+
+/* Background Yellow  */
+@include isBackgroundYellow();
+
+/* Background Green  */
+@include isBackgroundGreen();
+
+/* Background Blue  */
+@include isBackgroundBlue();
+
+/* Background Yellow  */
+@include isBackgroundYellow();
+
+/* Background Fuchsia  */
+@include isBackgroundFuchsia();
+
+/* Background Black  */
+@include isBackgroundBlack();
+
+/* Background White  */
+@include isBackgroundWhite();
+
+/* Background Light  */
+@include isBackgroundLight();
+
+/* Background Gradient  */
+@include isBackgroundGradient();
+
+/* Background Images  */
+@include isBackgroundImage();
+
+//* Spacing Box Mixins
+
+// Paddings
+
+@mixin isPadding-0 {
+  @if (map-get($map: $padding-0, $key: used) == true) {
+    .padding-0 {
+      padding: map-get($map: $padding-0, $key: padding);
+    }
+  }
+}
+
+@mixin isPadding-8 {
+  @if (map-get($map: $padding-8, $key: used) == true) {
+    .padding-8 {
+      padding: map-get($map: $padding-8, $key: padding);
+    }
+  }
+}
+
+@mixin isPadding-16 {
+  @if (map-get($map: $padding-16, $key: used) == true) {
+    .padding-16 {
+      padding: map-get($map: $padding-16, $key: padding);
+    }
+  }
+}
+
+@mixin isPadding-24 {
+  @if (map-get($map: $padding-24, $key: used) == true) {
+    .padding-24 {
+      padding: map-get($map: $padding-24, $key: padding);
+    }
+  }
+}
+
+@mixin isPadding-32 {
+  @if (map-get($map: $padding-32, $key: used) == true) {
+    .padding-32 {
+      padding: map-get($map: $padding-32, $key: padding);
+    }
+  }
+}
+
+@mixin isPadding-64 {
+  @if (map-get($map: $padding-64, $key: used) == true) {
+    .padding-64 {
+      padding: map-get($map: $padding-64, $key: padding);
+    }
+  }
+}
+
+// Margins
+
+@mixin ismargin-0 {
+  @if (map-get($map: $margin-0, $key: used) == true) {
+    .margin-0 {
+      margin: map-get($map: $margin-0, $key: margin);
+    }
+  }
+}
+
+@mixin ismarginBottom-8 {
+  @if (map-get($map: $marginBottom-8, $key: used) == true) {
+    .marginBottom-8 {
+      margin-bottom: map-get($map: $marginBottom-8, $key: margin-bottom);
+    }
+  }
+}
+
+@mixin ismarginBottom-16 {
+  @if (map-get($map: $marginBottom-16, $key: used) == true) {
+    .marginBottom-16 {
+      margin-bottom: map-get($map: $marginBottom-16, $key: margin-bottom);
+    }
+  }
+}
+
+@mixin ismarginBottom-24 {
+  @if (map-get($map: $marginBottom-24, $key: used) == true) {
+    .marginBottom-24 {
+      margin-bottom: map-get($map: $marginBottom-24, $key: margin-bottom);
+    }
+  }
+}
+
+@mixin ismarginBottom-32 {
+  @if (map-get($map: $marginBottom-32, $key: used) == true) {
+    .marginBottom-32 {
+      margin-bottom: map-get($map: $marginBottom-32, $key: margin-bottom);
+    }
+  }
+}
+
+@mixin ismarginBottom-64 {
+  @if (map-get($map: $marginBottom-64, $key: used) == true) {
+    .marginBottom-64 {
+      margin-bottom: map-get($map: $marginBottom-64, $key: margin-bottom);
+    }
+  }
+}
+
+/* Style Spacing Box */
+
+/* Paddings */
+
+@include isPadding-0();
+@include isPadding-8();
+@include isPadding-16();
+@include isPadding-24();
+@include isPadding-32();
+@include isPadding-64();
+
+/* Margins */
+
+@include ismargin-0();
+@include ismarginBottom-8();
+@include ismarginBottom-16();
+@include ismarginBottom-24();
+@include ismarginBottom-32();
+@include ismarginBottom-64();
+
+// * Color Border Mixins
+
+// Border Gray
+
+@mixin isBorderGray  {
+  @if (map-get($map: $border-gray, $key: used) == true) {
+      .border-gray {
+          border: map-get($map: $border-gray, $key: border);
+      }
+  }
+}
+
+// Border Red
+
+@mixin isBorderRed {
+  @if (map-get($map: $border-red, $key: used) == true) {
+      .border-red {
+          border: map-get($map: $border-red, $key: border);
+      }
+  }
+}
+
+// Border Orange
+
+@mixin isBorderOrange  {
+  @if (map-get($map: $border-orange, $key: used) == true) {
+      .border-orange {
+          border: map-get($map: $border-orange, $key: border);
+      }
+  }
+}
+
+// Border Yellow
+
+@mixin isBorderYellow  {
+  @if (map-get($map: $border-yellow, $key: used) == true) {
+      .border-yellow {
+          border: map-get($map: $border-yellow, $key: border);
+      }
+  }
+}
+
+// Border Green
+
+@mixin isBorderGreen  {
+  @if (map-get($map: $border-green, $key: used) == true) {
+      .border-green {
+          border: map-get($map: $border-green, $key: border);
+      }
+  }
+}
+
+// Border Blue
+
+@mixin isBorderBlue  {
+  @if (map-get($map: $border-blue, $key: used) == true) {
+      .border-blue {
+          border: map-get($map: $border-blue, $key: border);
+      }
+  }
+}
+
+// Border Violet
+
+@mixin isBorderViolet  {
+  @if (map-get($map: $border-violet, $key: used) == true) {
+      .border-violet {
+          border: map-get($map: $border-violet, $key: border);
+      }
+  }
+}
+
+// Border Fuchsia
+
+@mixin isBorderFuchsia  {
+  @if (map-get($map: $border-fuchsia, $key: used) == true) {
+      .border-fuchsia {
+          border: map-get($map: $border-fuchsia, $key: border);
+      }
+  }
+}
+
+// Border Black
+
+@mixin isBorderBlack  {
+  @if (map-get($map: $border-black, $key: used) == true) {
+      .border-black {
+          border: map-get($map: $border-black, $key: border);
+      }
+  }
+}
+
+// Border White
+
+@mixin isBorderWhite  {
+  @if (map-get($map: $border-white, $key: used) == true) {
+      .border-white {
+          border: map-get($map: $border-white, $key: border);
+      }
+  }
+}
+
+// Border Light
+
+@mixin isBorderLight  {
+  @if (map-get($map: $border-light, $key: used) == true) {
+      .border-light {
+          border: map-get($map: $border-light, $key: border);
+      }
+  }
+}
+
+// Border Rounded
+
+@mixin isBorderRounded {
+  @if (map-get($map: $border-rounded, $key: used) == true) {
+    $border-rounded : map-get($map: $border-rounded, $key: border-radius);
+    .border-rounded {
+      border-radius:  $border-rounded ;
+      -webkit-border-radius:  $border-rounded ;
+      -moz-border-radius:  $border-rounded ;
+      -ms-border-radius:  $border-rounded ;
+      -o-border-radius:  $border-rounded ;
+}
+  }
+}
+
+// Border Top
+
+@mixin isBorderTop {
+  @if (map-get($map: $border-top, $key: used) == true) {
+      .border-top {  
+          border-right: map-get($map: $border-top, $key: border-top);
+          border-bottom: map-get($map: $border-top, $key: border-top);
+          border-left: map-get($map: $border-top, $key: border-top);
+      }
+  }
+}
+
+// Border Right
+
+@mixin isBorderRight {
+  @if (map-get($map: $border-right, $key: used) == true) {
+      .border-right {       
+          border-top: map-get($map: $border-right, $key: border-right);
+          border-bottom: map-get($map: $border-right, $key: border-right);
+          border-left: map-get($map: $border-right, $key: border-right);
+      }
+  }
+}
+
+// Border Bottom
+
+@mixin isBorderBottom {
+  @if (map-get($map: $border-bottom, $key: used) == true) {
+      .border-bottom {       
+          border-top: map-get($map: $border-bottom, $key: border-bottom);
+          border-right: map-get($map: $border-bottom, $key: border-bottom);
+          border-left: map-get($map: $border-bottom, $key: border-bottom);
+      }
+  }
+}
+
+// Border Left
+
+@mixin isBorderLeft {
+  @if (map-get($map: $border-left, $key: used) == true) {
+      .border-left {       
+          border-top: map-get($map: $border-left, $key: border-left);
+          border-right: map-get($map: $border-left, $key: border-left);
+          border-bottom: map-get($map: $border-left, $key: border-left);
+      }
+  }
+}
+
+/* Style Color Border */
+
+/* Border Gray */
+@include isBorderGray();
+
+/* Border Red */
+@include isBorderRed();
+
+/* Border Orange */
+@include isBorderOrange();
+
+/* Border Yellow */
+@include isBorderYellow();
+
+/* Border Green */
+@include isBorderGreen();
+
+/* Border Blue */
+@include isBorderBlue();
+
+/* Border Violet */
+@include isBorderViolet();
+
+/* Border Fuchsia */
+@include isBorderFuchsia();
+
+/* Border Black */
+@include isBorderBlack();
+
+/* Border White */
+@include isBorderWhite();
+
+/* Border Light */
+@include isBorderLight();
+
+/* Border Rounded */
+@include isBorderRounded();
+
+/* Border Top */
+@include isBorderTop();
+
+/* Border Right */
+@include isBorderRight();
+
+/* Border Bottom */
+@include isBorderBottom();
+
+/* Border Left */
+@include isBorderLeft();

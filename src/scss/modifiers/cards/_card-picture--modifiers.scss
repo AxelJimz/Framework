@@ -1,0 +1,25 @@
+// ? Modifiers Style Card Picture
+
+// * Configuration
+
+$height-card-picture: map-get(
+  $map: $card__picture,
+  $key: height,
+);
+
+// Card Picture
+
+$card__picture--small: (
+  "used": true,
+  "height": $height-card-picture / 1.5,
+);
+
+$card__picture--medium: (
+  "used": true,
+  "height": $height-card-picture * 1.25,
+);
+
+$card__picture--large: (
+  "used": true,
+  "height": $height-card-picture * 2,
+);

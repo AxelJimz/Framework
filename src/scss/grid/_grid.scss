@@ -1,0 +1,24 @@
+// ? Style Grid
+
+// * Configuration
+
+$row : (
+    "width" : 100%,
+    "display" : grid,
+    "columns" : repeat(1, 1fr),
+);
+
+$column : (
+    "padding" : 1.25rem,
+);
+
+$columns : (
+    "columns" : repeat(1, 1fr),
+    "md-columns": repeat(2, 1fr),
+    "lg-columns": repeat(3, 1fr),
+);
+
+
+
+
+

@@ -1,0 +1,36 @@
+// ? Style Content
+
+// * Configuration
+
+$header-article-footer : (
+  "position": relative,
+  "width" : 100%,
+  "padding" : 0 0.75rem,
+  "z-index" : 500,
+);
+
+$header__content: (
+  "position": relative,
+  "width": 100%,
+  "max-width": 940px,
+  "padding": 4rem 0.75rem,
+  "margin-inline": auto,
+);
+
+$article__content: (
+  "position": relative,
+  "width": 100%,
+  "max-width": 940px,
+  "padding": 4rem 0,
+  "margin-inline": auto,
+);
+
+$footer__content: (
+  "position": relative,
+  "width": 100%,
+  "max-width": 940px,
+  "padding": 2rem 0,
+  "margin-inline": auto,
+);
+
+

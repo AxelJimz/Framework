@@ -1,0 +1,113 @@
+// ? Modifiers Style Btn
+
+// * Configuration
+
+$btn--square:(
+    "padding" : 0.75rem 1rem, 
+    "margin" : none,
+    "color" : $white,
+    "bg" : $gray,
+    "bg-hover" : rgba($gray, 0.8),
+    "md-margin" : none,
+);
+
+$btn--rounded:(
+    "used" : true,
+    "padding" : 0.75rem 1rem, 
+    "margin" : none,
+    "color" : $white,
+    "bg" : $gray,
+    "bg-hover" : rgba($gray, 0.8),
+    "rounded" : 40px,
+    "md-margin" : none,
+);
+
+$btn--small : (
+    "used" : true,
+    "padding" : 0.5rem 0.75rem,
+);
+
+$btn--medium : (
+    "used" : true,
+    "padding" : 1rem 1.25rem,
+);
+
+$btn--large : (
+    "used" : true,
+    "padding" : 1.25rem 1.5rem,
+);
+
+$btn-gray--outline : (
+    "used"  : true,
+    "color" : $gray,
+    "bg" : transparent,
+    "border-color" : 1px solid $gray,
+    "color-hover" : $white,
+    "bg-hover" : $gray,
+);
+
+$btn-red--outline : (
+    "used"  : true,
+    "color" : $red,
+    "bg" : transparent,
+    "border-color" : 1px solid $red,
+    "color-hover" : $white,
+    "bg-hover" : $red,
+);
+
+$btn-orange--outline : (
+    "used"  : true,
+    "color" : $orange,
+    "bg" : transparent,
+    "border-color" : 1px solid $orange,
+    "color-hover" : $white,
+    "bg-hover" : $orange,
+);
+
+$btn-yellow--outline : (
+    "used"  : true,
+    "color" : $yellow,
+    "bg" : transparent,
+    "border-color" : 1px solid $yellow,
+    "color-hover" : $white,
+    "bg-hover" : $yellow,
+);
+
+$btn-green--outline : (
+    "used"  : true,
+    "color" : $green,
+    "bg" : transparent,
+    "border-color" : 1px solid $green,
+    "color-hover" : $white,
+    "bg-hover" : $green,
+);
+
+$btn-blue--outline : (
+    "used"  : true,
+    "color" : $blue,
+    "bg" : transparent,
+    "border-color" : 1px solid $blue,
+    "color-hover" : $white,
+    "bg-hover" : $blue,
+);
+
+$btn-violet--outline : (
+    "used"  : true,
+    "color" : $violet,
+    "bg" : transparent,
+    "border-color" : 1px solid $violet,
+    "color-hover" : $white,
+    "bg-hover" : $violet,
+);
+
+$btn-fuchsia--outline : (
+    "used"  : true,
+    "color" : $fuchsia,
+    "bg" : transparent,
+    "border-color" : 1px solid $fuchsia,
+    "color-hover" : $white,
+    "bg-hover" : $fuchsia,
+);
+
+
+

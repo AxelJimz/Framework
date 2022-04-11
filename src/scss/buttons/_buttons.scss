@@ -1,0 +1,83 @@
+// ? Style Button
+
+// * Configuration
+
+$btn : (
+    "margin" : 0 1rem 1rem 0,
+    "size" : 14px,
+    "weight" : 500,
+    "color" : $gray,
+    "md-margin" : 0 1rem 0 0,
+);
+
+$btn-gray : (
+    "used" : true,
+    "color" : $white,
+    "bg" : $gray,
+    "bg-hover" : rgba($gray, 0.8),
+);
+
+$btn-red : (
+    "used" : true,
+    "color" : $white,
+    "bg" : $red,
+    "bg-hover" : rgba($red, 0.8),
+);
+
+$btn-orange : (
+    "used" : true,
+    "color" : $white,
+    "bg" : $orange,
+    "bg-hover" : rgba($orange, 0.8),
+);
+
+$btn-yellow : (
+    "used" : true,
+    "color" : $white,
+    "bg" : $yellow,
+    "bg-hover" : rgba($yellow, 0.8),
+);
+
+$btn-green : (
+    "used" : true,
+    "color" : $white,
+    "bg" : $green,
+    "bg-hover" : rgba($green, 0.8),
+);
+
+$btn-blue : (
+    "used" : true,
+    "color" : $white,
+    "bg" : $blue,
+    "bg-hover" : rgba($blue, 0.8),
+);
+
+$btn-violet : (
+    "used" : true,
+    "color" : $white,
+    "bg" : $violet,
+    "bg-hover" : rgba($violet, 0.8),
+);
+
+$btn-fuchsia : (
+    "used" : true,
+    "color" : $white,
+    "bg" : $fuchsia,
+    "bg-hover" : rgba($fuchsia, 0.8),
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

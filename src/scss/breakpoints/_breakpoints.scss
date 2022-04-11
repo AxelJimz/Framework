@@ -1,0 +1,126 @@
+@import "../modifiers/nav/nav--modifiers";
+
+// ! Style Breakpoint | Do not Modify
+
+// * Configuration
+
+@media screen and (min-width: 48rem) {
+  /* Grid */
+
+  .columns-two,
+  .columns-three,
+  .columns-four {
+    grid-template-columns: map-get($map: $columns, $key: md-columns);
+  }
+
+  .md-take-two-columns {
+    grid-column: span 2;
+  }
+
+  .md-take-three-columns {
+    grid-column: span 3;
+  }
+
+  /* Flexbox */
+
+  @include isContent-x-center-md();
+  @include isContent-x-left-center-md();
+  @include isContent-x-center-right-md();
+  @include isContent-x-center-around-md();
+  @include isContent-x-center-between-md();
+
+  /* Nav */
+
+  .nav__mobile,
+  .nav__disable {
+    display: map-get($map: $nav__mobile, $key: md-display);
+  }
+
+  .nav__mobile--static {
+    margin: map-get($map: $nav__mobile--static, $key: md-margin);
+    display: map-get($map: $nav__mobile--static, $key: md-display);
+  }
+
+  .nav__logo {
+    margin: map-get($map: $nav__logo, $key: md-margin);
+  }
+
+  .nav__desktop {
+    position: map-get($map: $nav__desktop, $key: md-position);
+    display: map-get($map: $nav__desktop, $key: md-display);
+    justify-content: map-get($map: $nav__desktop, $key: md-justify-content);
+    align-items: map-get($map: $nav__desktop, $key: md-aling-items);
+  }
+
+  .nav__link {
+    margin: map-get($map: $nav__link, $key: md-margin);
+  }
+
+  .nav__link--margin {
+    margin: map-get($map: $nav__link--margin, $key: md-margin);
+  }
+
+  .nav__link--left {
+    position: map-get($map: $nav__link--left, $key: position);
+    top: map-get($map: $nav__link--left, $key: top);
+    left: map-get($map: $nav__link--left, $key: left);
+    margin: map-get($map: $nav__link--left, $key: margin);
+  }
+
+  .nav__link--right {
+    position: map-get($map: $nav__link--right, $key: position);
+    top: map-get($map: $nav__link--right, $key: top);
+    right: map-get($map: $nav__link--right, $key: right);
+    margin: map-get($map: $nav__link--right, $key: margin);
+  }
+
+  /* Typography */
+
+  .article__paragraph {
+    margin: map-get($map: $article__paragraph, $key: md-margin);
+  }
+
+  /* aling Content */
+
+  @include isTextLeft-md();
+  @include isTextCenter-md();
+  @include isTextRight-md();
+
+  .btn {
+    margin: map-get($map: $btn, $key: md-margin);
+  }
+}
+
+@media screen and (min-width: 62rem) {
+  /* Grid */
+
+  .columns-three {
+    grid-template-columns: map-get($map: $columns, $key: lg-columns);
+  }
+
+  .columns-four {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .lg-take-two-columns {
+    grid-column: span 2;
+  }
+
+  .lg-take-three-columns {
+    grid-column: span 3;
+  }
+
+  /* Flexbox */
+
+  @include isContent-x-center-lg();
+  @include isContent-x-left-center-lg();
+  @include isContent-x-center-right-lg();
+  @include isContent-x-center-around-lg();
+  @include isContent-x-center-between-lg();
+
+  /* aling Content */
+
+  @include isTextLeft-lg();
+  @include isTextCenter-lg();
+  @include isTextRight-lg();
+}

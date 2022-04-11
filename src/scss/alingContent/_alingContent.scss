@@ -1,0 +1,34 @@
+// ? Style Aling Content
+
+// * Configuration
+
+$text-left: (
+  // BREAKPOINT SMALL
+  "used": true,
+  "text-center": left,
+  // BREAKPOINT MEDIUM
+  "md-text-center": center,
+  // BREAKPOINT LARGE
+  "lg-text-center": none,
+);
+
+$text-center: (
+  // BREAKPOINT SMALL
+  "used": true,
+  "text-center": center,
+  // BREAKPOINT MEDIUM
+  "md-text-center": center,
+  // BREAKPOINT LARGE
+  "lg-text-center": center,
+);
+
+$text-right: (
+  // BREAKPOINT SMALL
+  "used": true,
+  "text-center": right,
+  // BREAKPOINT MEDIUM
+  "md-text-center": right,
+  // BREAKPOINT LARGE
+  "lg-text-center": right,
+);
+

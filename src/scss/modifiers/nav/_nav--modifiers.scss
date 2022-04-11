@@ -1,0 +1,51 @@
+// ? Modifiers Style Navbar
+
+// * Configuration
+
+$nav__mobile--static : (
+    "md-margin" : 0 0 0.5rem 0,
+    "md-display" : flex,
+);
+
+$nav--fixed : (
+    "used" : true,
+    "position" : fixed,
+    "top" : 0,
+    "left" : 0,
+);
+
+$nav--sticky : (
+    "used" : true,
+    "position" : sticky,
+    "top" : 0,
+    "left" : 0,
+);
+
+$nav__link--active : (
+    "used" : true,
+    "color" : $blue,
+    "color-hover" : rgba($blue, 0.8),
+);
+
+$nav__link--margin : (
+    "margin" : 0,
+    "md-margin" : 0,
+);
+
+$nav__link--left : (
+    "position" : absolute,
+    "top" : 0,
+    "left" : 0,
+    "margin" : 0,
+);
+
+$nav__link--right : (
+    "position" : absolute,
+    "top" : 0,
+    "right" : 0,
+    "margin" : 0,
+);
+
+$nav__disable--left : (
+    "left" : -120%,
+);

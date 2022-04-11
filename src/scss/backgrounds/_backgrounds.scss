@@ -1,0 +1,93 @@
+// ? Style Backgrounds Colors and Image
+
+// * Configuration
+
+// * Backgroud Colors
+
+$bg-gray: (
+  "used": true,
+  "background-color": $gray,
+);
+
+$bg-red: (
+  "used": true,
+  "background-color": $red,
+);
+
+$bg-orange: (
+  "used": true,
+  "background-color": $orange,
+);
+
+$bg-yellow: (
+  "used": true,
+  "background-color": $yellow,
+);
+
+$bg-green: (
+  "used": true,
+  "background-color": $green,
+);
+
+$bg-blue: (
+  "used": true,
+  "background-color": $blue,
+);
+
+$bg-violet: (
+  "used": true,
+  "background-color": $violet,
+);
+
+$bg-fuchsia: (
+  "used": true,
+  "background-color": $fuchsia,
+);
+
+$bg-black: (
+  "used": true,
+  "background-color": $black,
+);
+
+$bg-white: (
+  "used": true,
+  "background-color": $white,
+);
+
+$bg-light: (
+  "used": true,
+  "background-color": $light,
+);
+
+$bg-gradient: (
+  "used": true,
+  "background-color": $gradient,
+);
+
+// * Backgroud Image
+
+$bg-header: (
+  "used": true,
+  "background-image": url(../../src/img/backgrounds/header.jpg),
+);
+
+$bg-article: (
+  "used": true,
+  "background-image": url(../../src/img/backgrounds/article.jpg),
+);
+
+$bg-article-two: (
+  "used": true,
+  "background-image": url(../../src/img/backgrounds/article-two.jpg),
+);
+
+$bg-article-three: (
+  "used": true,
+  "background-image": url(../../src/img/backgrounds/article-three.jpg),
+);
+
+$bg-footer: (
+  "used": true,
+  "background-image": url(../../src/img/backgrounds/footer.jpg),
+);
+
